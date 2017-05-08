@@ -1,0 +1,307 @@
+<!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<div class="modal fade" id="shortcutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="myModalLabel">快捷键</h4>
+      </div>
+      <div class="modal-body">
+
+        <h4>笔记快捷键</h4>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Shift</kbd> + <kbd class="kbd-dark">Enter</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            运行段落
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">C</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            退出
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">P</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            光标上移
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">N</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            光标下移
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">D</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            移除段落
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">A</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            在上方插入新段落
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">B</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            在下方插入新段落
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">Shift</kbd> + <kbd class="kbd-dark">C</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            在下方插入复制的段落
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">K</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            段落上移
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">J</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            段落下移
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt' }}</kbd> + <kbd class="kbd-dark">R</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            启用 / 禁用 段落运行
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">O</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            切换输出
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">E</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            切换编辑器
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">M</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            切换行号
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">T</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            切换标题
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">L</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            清除输出
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">{{ isMac ? 'Option' : 'Alt'}}</kbd> + <kbd class="kbd-dark">W</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            链接该段落
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">Shift</kbd> + <kbd class="kbd-dark">-</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            裁剪段落宽度
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">Shift</kbd> + <kbd class="kbd-dark">+</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            增加段落宽度
+          </div>
+        </div>
+
+
+        <h4>编辑器快捷方式</h4>
+
+      <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">.</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            自动补全
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">K</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            剪切该行
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">Y</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            粘贴该行
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">S</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            代码内搜索
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">A</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            光标移至起始处
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="keys">
+              <kbd class="kbd-dark">Ctrl</kbd> + <kbd class="kbd-dark">E</kbd>
+            </div>
+          </div>
+          <div class="col-md-8">
+            光标移至末尾处
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
