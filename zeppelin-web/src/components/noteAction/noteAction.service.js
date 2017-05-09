@@ -20,8 +20,8 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
   this.moveNoteToTrash = function(noteId, redirectToHome) {
     BootstrapDialog.confirm({
       closable: true,
-      title: 'Move this note to trash?',
-      message: 'This note will be moved to <strong>trash</strong>.',
+      title: '将该笔记移入回收站?',
+      message: '该笔记将会被移入 <strong>回收站</strong>.',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.moveNoteToTrash(noteId);
@@ -36,8 +36,8 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
   this.moveFolderToTrash = function(folderId) {
     BootstrapDialog.confirm({
       closable: true,
-      title: 'Move this folder to trash?',
-      message: 'This folder will be moved to <strong>trash</strong>.',
+      title: '将该目录移入回收站?',
+      message: '该目录竟会被移入 <strong>回收站</strong>.',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.moveFolderToTrash(folderId);
@@ -50,8 +50,8 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
     BootstrapDialog.confirm({
       type: BootstrapDialog.TYPE_WARNING,
       closable: true,
-      title: 'WARNING! This note will be removed permanently',
-      message: 'This cannot be undone. Are you sure?',
+      title: '警告! 该笔记将会被永久删除',
+      message: '这无法撤销，确定吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.deleteNote(noteId);
@@ -67,8 +67,8 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
     BootstrapDialog.confirm({
       type: BootstrapDialog.TYPE_WARNING,
       closable: true,
-      title: 'WARNING! This folder will be removed permanently',
-      message: 'This cannot be undone. Are you sure?',
+      title: '警告! 该文件夹将会被永久删除',
+      message: '这无法撤销，确定吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.removeFolder(folderId);
@@ -80,9 +80,9 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
   this.restoreAll = function() {
     BootstrapDialog.confirm({
       closable: true,
-      title: 'Are you sure want to restore all notes in the trash?',
-      message: 'Folders and notes in the trash will be ' +
-      '<strong>merged</strong> into their original position.',
+      title: '确认恢复回收站中的所有笔记吗?',
+      message: '回收站中的文件夹与笔记将会 ' +
+      '<strong>合并</strong> 到他们原来的地方.',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.restoreAll();
@@ -95,8 +95,8 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
     BootstrapDialog.confirm({
       type: BootstrapDialog.TYPE_WARNING,
       closable: true,
-      title: 'WARNING! Notes under trash will be removed permanently',
-      message: 'This cannot be undone. Are you sure?',
+      title: '警告! 回收站里的笔记将会被永久删除',
+      message: '这将无法撤销，确定吗？',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.emptyTrash();
@@ -109,7 +109,7 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to clear all output?',
+      message: '需要清除所有输出吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.clearAllParagraphOutput(noteId);
@@ -120,7 +120,7 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
 
   this.renameNote = function(noteId, notePath) {
     renameSrv.openRenameModal({
-      title: 'Rename note',
+      title: '重命名笔记',
       oldName: notePath,
       callback: function(newName) {
         websocketMsgSrv.renameNote(noteId, newName);
@@ -130,7 +130,7 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
 
   this.renameFolder = function(folderId) {
     renameSrv.openRenameModal({
-      title: 'Rename folder',
+      title: '重命名文件夹',
       oldName: folderId,
       callback: function(newName) {
         var newFolderId = normalizeFolderId(newName);
@@ -138,7 +138,7 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
           BootstrapDialog.confirm({
             type: BootstrapDialog.TYPE_WARNING,
             closable: true,
-            title: 'WARNING! The folder will be MERGED',
+            title: '警告! 该文件夹将会被合并',
             message: 'The folder will be merged into <strong>' + newFolderId + '</strong>. Are you sure?',
             callback: function(result) {
               if (result) {

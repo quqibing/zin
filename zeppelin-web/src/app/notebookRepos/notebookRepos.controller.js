@@ -69,7 +69,7 @@ function NotebookReposCtrl($http, baseUrlSrv, ngToast) {
       }).error(function(data, status, headers, config) {
       if (status === 401) {
         ngToast.danger({
-          content: 'You don\'t have permission on this page',
+          content: '你没有权限访问本页面',
           verticalPosition: 'bottom',
           timeout: '3000'
         });

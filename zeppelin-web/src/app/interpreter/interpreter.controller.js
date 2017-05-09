@@ -94,7 +94,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
       }).error(function(data, status, headers, config) {
       if (status === 401) {
         ngToast.danger({
-          content: 'You don\'t have permission on this page',
+          content: '你没有权限访问本页面',
           verticalPosition: 'bottom',
           timeout: '3000'
         });
@@ -115,7 +115,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
       }
 
       if (setting.status === 'ERROR' || setting.errorReason) {
-        ngToast.danger({content: 'Error setting properties for interpreter \'' +
+        ngToast.danger({content: '解释器属性设置错误 \'' +
         setting.group + '.' + setting.name + '\': ' + setting.errorReason,
           verticalPosition: 'top', dismissOnTimeout: false});
       }
@@ -304,7 +304,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
       closeByBackdrop: false,
       closeByKeyboard: false,
       title: '',
-      message: 'Do you want to update this interpreter and restart with new settings?',
+      message: '想使用新的设置更新解释器并重启吗?',
       callback: function(result) {
         if (result) {
           var index = _.findIndex($scope.interpreterSettings, {'id': settingId});
@@ -381,7 +381,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to delete this interpreter setting?',
+      message: '删除该解释器设置吗？',
       callback: function(result) {
         if (result) {
           $http.delete(baseUrlSrv.getRestApiBase() + '/interpreter/setting/' + settingId)
@@ -417,16 +417,16 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to restart this interpreter?',
+      message: '要重启该解释器吗？',
       callback: function(result) {
         if (result) {
           $http.put(baseUrlSrv.getRestApiBase() + '/interpreter/setting/restart/' + settingId)
             .success(function(data, status, headers, config) {
               var index = _.findIndex($scope.interpreterSettings, {'id': settingId});
               $scope.interpreterSettings[index] = data.body;
-              ngToast.info('Interpreter stopped. Will be lazily started on next run.');
+              ngToast.info('解释器已停止，将会在下次运行时启动.');
             }).error(function(data, status, headers, config) {
-              var errorMsg = (data !== null) ? data.message : 'Could not connect to server.';
+              var errorMsg = (data !== null) ? data.message : '无法连接到服务器.';
               console.log('Error %o %o', status, errorMsg);
               ngToast.danger(errorMsg);
           });
@@ -441,8 +441,8 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
       !$scope.newInterpreterSetting.name.trim() || !$scope.newInterpreterSetting.group) {
       BootstrapDialog.alert({
         closable: true,
-        title: 'Add interpreter',
-        message: 'Please fill in interpreter name and choose a group'
+        title: '增加解释器',
+        message: '请填入解释器名称并选择一个组'
       });
       return;
     }
@@ -450,8 +450,8 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     if ($scope.newInterpreterSetting.name.indexOf('.') >= 0) {
       BootstrapDialog.alert({
         closable: true,
-        title: 'Add interpreter',
-        message: '\'.\' is invalid for interpreter name'
+        title: '增加解释器',
+        message: '\'.\' 解释器名称非法'
       });
       return;
     }
@@ -459,8 +459,8 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     if (_.findIndex($scope.interpreterSettings, {'name': $scope.newInterpreterSetting.name}) >= 0) {
       BootstrapDialog.alert({
         closable: true,
-        title: 'Add interpreter',
-        message: 'Name ' + $scope.newInterpreterSetting.name + ' already exists'
+        title: '增加解释器',
+        message: '名称 ' + $scope.newInterpreterSetting.name + ' 已存在'
       });
       return;
     }
@@ -661,7 +661,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to delete this repository?',
+      message: '需要删除该仓库吗?',
       callback: function(result) {
         if (result) {
           $http.delete(baseUrlSrv.getRestApiBase() + '/interpreter/repository/' + repoId)
@@ -686,7 +686,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
 
   $scope.showErrorMessage = function(setting) {
     BootstrapDialog.show({
-      title: 'Error downloading dependencies',
+      title: '下载依赖错误',
       message: setting.errorReason
     });
   };
@@ -706,7 +706,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
         var url = data.body.url;
         if (!url) {
           BootstrapDialog.alert({
-            message: 'No spark application running'
+            message: '没有正在运行的spark应用'
           });
           return;
         }

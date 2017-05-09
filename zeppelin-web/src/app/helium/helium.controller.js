@@ -92,7 +92,7 @@
         closeByBackdrop: false,
         closeByKeyboard: false,
         title: '',
-        message: 'Save changes?',
+        message: '保存变更?',
         callback: function(result) {
           if (result) {
             confirm.$modalFooter.find('button').addClass('disabled');
@@ -107,7 +107,7 @@
                 confirm.close();
                 console.log('Failed to save order');
                 BootstrapDialog.show({
-                  title: 'Error on saving order ',
+                  title: '保存顺序出错 ',
                   message: data.message
                 });
               });
