@@ -14,11 +14,11 @@ limitations under the License.
 <div ng-controller="HomeCtrl as home">
   <div class="row">
     <div class="col-md-4">
-      <h4>Notebook
+      <h4>笔记本
         <i ng-class="isReloadingNotes ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'"
            ng-style="!isReloadingNotes && {'cursor': 'pointer'}" style="font-size: 13px;"
            ng-click="reloadNoteList();"
-           tooltip-placement="bottom" tooltip="Reload notes from storage">
+           tooltip-placement="bottom" tooltip="从存储中重新加载笔记">
          </i>
       </h4>
         <h5><a href="" data-toggle="modal" data-target="#noteImportModal" style="text-decoration: none;">

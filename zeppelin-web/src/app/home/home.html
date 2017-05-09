@@ -29,13 +29,13 @@ limitations under the License.
             <i ng-class="isReloadingNotes ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'"
               ng-style="!isReloadingNotes && {'cursor': 'pointer'}" style="font-size: 13px;"
               ng-click="reloadNoteList();"
-              tooltip-placement="bottom" tooltip="Reload notes from storage">
+              tooltip-placement="bottom" tooltip="从存储中重新加载笔记">
             </i>
           </h4>
 
           <div>
             <h5><a href="" data-toggle="modal" data-target="#noteImportModal" style="text-decoration: none;">
-              <i style="font-size: 15px;" class="fa fa-upload"></i> Import note</a></h5>
+              <i style="font-size: 15px;" class="fa fa-upload"></i> 导入笔记</a></h5>
             <h5 ng-controller="NotenameCtrl as notenamectrl"><a href="" data-toggle="modal" data-target="#noteNameModal" style="text-decoration: none;" ng-click="notenamectrl.getInterpreterSettings()">
               <i style="font-size: 15px;" class="icon-notebook"></i> 创建新笔记本</a></h5>
             <ul id="notebook-names">

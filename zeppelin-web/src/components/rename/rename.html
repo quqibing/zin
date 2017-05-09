@@ -20,8 +20,8 @@ limitations under the License.
         <h4 class="modal-title">{{title}}</h4>
       </div>
       <div class="modal-body">
-        <label ng-if="isValid">Please enter a new name</label>
-          <label class="text-danger" ng-if="!isValid">Please enter a valid name</label>
+        <label ng-if="isValid">请输入一个新名称</label>
+          <label class="text-danger" ng-if="!isValid">请输入一个合法名称</label>
         <div class="form-group" ng-class="{'has-error': !isValid}">
           <input type="text" class="form-control"
             ng-model="params.newName" ng-change="validate()"
@@ -33,7 +33,7 @@ limitations under the License.
         <div>
           <button type="button" class="btn btn-default btn-primary"
             ng-click="rename()" ng-class="{'disabled': !isValid}">
-            Rename
+            重命名
           </button>
         </div>
       </div>

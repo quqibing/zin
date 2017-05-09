@@ -16,15 +16,15 @@ limitations under the License.
     <div class="col-md-12" ng-show="showAddNewSetting">
       <hr />
       <div class="interpreterSettingAdd">
-        <h4>Create new interpreter</h4>
+        <h4>创建新的解释器</h4>
 
         <div class="form-group" style="width:200px">
-          <b>Interpreter Name</b>
+          <b>解释器名称</b>
           <input id="newInterpreterSettingName" input pu-elastic-input
                  pu-elastic-input-minwidth="180px" ng-model="newInterpreterSetting.name" />
         </div>
 
-        <b>Interpreter group</b>
+        <b>解释器组</b>
         <div class="form-group"
              style="width:180px">
           <select class="form-control input-sm" ng-model="newInterpreterSetting.group"
@@ -36,10 +36,10 @@ limitations under the License.
         </div>
 
         <div>
-          <h5>Option</h5>
+          <h5>选项</h5>
           <div class="row interpreter" style="margin-top: 5px;">
             <div class="col-md-6">
-              The interpreter will be instantiated
+              该解释器将会被实例化
               <span class="btn-group">
               <button type="button" class="btn btn-default btn-xs dropdown-toggle"
                       data-toggle="dropdown"
@@ -67,7 +67,7 @@ limitations under the License.
                 </li>
               </ul>
             </span>
-              in
+              于
               <span class="btn-group">
               <button type="button" class="btn btn-default btn-xs dropdown-toggle"
                       data-toggle="dropdown"
@@ -84,16 +84,16 @@ limitations under the License.
                 <li
                   ng-if="getInterpreterRunningOption(setting.id) === 'Globally'">
                   <a style="cursor:pointer"
-                     tooltip="Single interpreter instance are shared across notes"
+                     tooltip="单个解释器实例在笔记间共享"
                      ng-click="setPerNoteOption(setting.id, 'shared')">
-                    shared per note
+                    笔记间共享
                   </a>
                 </li>
 
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per Note'"
-                     tooltip="Separate Interpreter instance for each note"
+                     tooltip="为每个笔记创建不同的解释器实例"
                      ng-click="setPerNoteOption(setting.id, 'scoped')">
                     scoped per note
                   </a>
@@ -101,7 +101,7 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per User'"
-                     tooltip="Separate Interpreter instance for each note"
+                     tooltip="为每个笔记创建单独的解释器实例"
                      ng-click="setPerUserOption(setting.id, 'scoped')">
                     scoped per user
                   </a>
@@ -110,22 +110,22 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per Note'"
-                     tooltip="Separate Interpreter process for each note"
+                     tooltip="为每个笔记创建单独的解释器进程"
                      ng-click="setPerNoteOption(setting.id, 'isolated')">
-                    isolated per note
+                    笔记间隔离
                   </a>
                 </li>
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per User'"
-                     tooltip="Separate Interpreter process for each note"
+                     tooltip="为每个笔记创建单独的解释器进程"
                      ng-click="setPerUserOption(setting.id, 'isolated')">
-                    isolated per user
+                    用户间隔离
                   </a>
                 </li>
               </ul>
             </span>
-              process.
+              处理.
             <span ng-if="getInterpreterRunningOption(setting.id) === 'Per User' && ticket.principal !== 'anonymous'">
               <span ng-if="getPerNoteOption(setting.id) === 'shared'">
                 <button type="button" class="btn btn-default btn-xs"
@@ -154,12 +154,12 @@ limitations under the License.
                           data-toggle="dropdown"
                           ng-disabled="true">
                     <span>
-                      Per Note
+                      每个笔记
                     </span>
                     <span class="caret"></span>
                   </button>
                 </span>
-                in
+                于
                 <span class="btn-group">
                   <button type="button" class="btn btn-default btn-xs dropdown-toggle"
                           data-toggle="dropdown">
@@ -171,21 +171,21 @@ limitations under the License.
                   <ul class="dropdown-menu" role="menu">
                     <li>
                       <a style="cursor:pointer"
-                         tooltip="Separate Interpreter instance for each note"
+                         tooltip="为每个笔记创建单独的解释器实例"
                          ng-click="setPerNoteOption(setting.id, 'scoped')">
-                        scoped per note
+                        笔记间查看
                       </a>
                     </li>
                     <li>
                       <a style="cursor:pointer"
-                         tooltip="Separate Interpreter process for each note"
+                         tooltip="为每个笔记创建单独的解释器进程"
                          ng-click="setPerNoteOption(setting.id, 'isolated')">
-                        isolated per note
+                        笔记间隔离
                       </a>
                     </li>
                   </ul>
                 </span>
-                process.
+                处理.
                 <button type="button" class="btn btn-default btn-xs"
                         ng-click="setPerNoteOption(setting.id, 'shared')"
                         data-toggle="dropdown">
@@ -202,7 +202,7 @@ limitations under the License.
           <span class="input-group" style="line-height:30px;">
             <label>
               <input type="checkbox" style="width:20px" ng-model="newInterpreterSetting.option.isUserImpersonate" />
-                User Impersonate
+                用户模拟
             </label>
           </span>
             </div>
@@ -214,7 +214,7 @@ limitations under the License.
           <span class="input-group" style="line-height:30px;">
             <label>
               <input type="checkbox" style="width:20px" id="isExistingProcess" ng-model="newInterpreterSetting.option.isExistingProcess"/>
-              Connect to existing process
+              连接到现有进程
             </label>
           </span>
             </div>
@@ -222,12 +222,12 @@ limitations under the License.
         </div>
         <div class="row interpreter" ng-show="newInterpreterSetting.option.isExistingProcess" >
           <div class="col-md-12">
-            <b>Host</b>
+            <b>主机</b>
             <input id="newInterpreterSettingHost" input pu-elastic-input
                    pu-elastic-input-minwidth="180px" ng-model="newInterpreterSetting.option.host"/>
           </div>
           <div class="col-md-12">
-            <b>Port</b>
+            <b>端口</b>
             <input id="newInterpreterSettingPort" input pu-elastic-input
                    pu-elastic-input-minwidth="180px" ng-model="newInterpreterSetting.option.port"/>
           </div>
@@ -238,7 +238,7 @@ limitations under the License.
           <span class="input-group" style="line-height:30px;">
             <label>
               <input type="checkbox" style="width:20px !important" id="idShowPermission" ng-click="togglePermissions('newInterpreter')" ng-model="newInterpreterSetting.option.setPermission"/>
-               Set permission
+               设置权限
             </label>
           </span>
             </div>
@@ -252,7 +252,7 @@ limitations under the License.
             <div ng-show="newInterpreterSetting.option.setPermission" class="permissionsForm">
               <div>
                 <p>
-                  Enter comma separated users in the fields. <br />
+                  在表单中输入用逗号分隔的用户名. <br />
                   Empty field (*) implies anyone can run this interpreter.
                 </p>
                 <div>
@@ -267,13 +267,13 @@ limitations under the License.
         </div>
 
         <div>
-          <h5>Properties</h5>
+          <h5>属性</h5>
           <table class="table table-striped properties">
             <tr>
-              <th>name</th>
-              <th>value</th>
-              <th>description</th>
-              <th>action</th>
+              <th>名称</th>
+              <th>值</th>
+              <th>描述</th>
+              <th>动作</th>
             </tr>
             <tr ng-repeat="key in newInterpreterSetting.properties | sortByKey">
               <td>{{key}}</td>
@@ -301,12 +301,12 @@ limitations under the License.
         </div>
 
         <div>
-          <h5>Dependencies</h5>
+          <h5>依赖</h5>
           <table class="table table-striped properties">
             <tr>
-              <th>artifact</th>
-              <th>exclude</th>
-              <th>action</th>
+              <th>控件</th>
+              <th>例外</th>
+              <th>动作</th>
             </tr>
 
             <tr ng-repeat="dep in newInterpreterSetting.dependencies">
@@ -316,7 +316,7 @@ limitations under the License.
               <td>
                 <textarea msd-elastic ng-model="dep.exclusions"
                           ng-list
-                          placeholder="(Optional) comma separated groupId:artifactId list">
+                          placeholder="(可选) 逗号分割的 groupId:artifactId 列表">
                 </textarea>
               </td>
               <td>
@@ -329,13 +329,13 @@ limitations under the License.
             <tr>
               <td>
                 <input ng-model="newInterpreterSetting.depArtifact"
-                       placeholder="groupId:artifactId:version or local file path"
+                       placeholder="groupId:artifactId:版本或本地文件路径"
                        style="width: 100%" />
               </td>
               <td>
                 <textarea msd-elastic ng-model="newInterpreterSetting.depExclude"
                           ng-list
-                          placeholder="(Optional) comma separated groupId:artifactId list">
+                          placeholder="(可选) 逗号分割的 groupId:artifactId 列表">
                 </textarea>
               </td>
               <td>
@@ -347,10 +347,10 @@ limitations under the License.
         </div>
 
         <span class="btn btn-primary" ng-click="addNewInterpreterSetting()">
-          Save
+          保存
         </span>
         <span class="btn btn-default" ng-click="cancelInterpreterSetting()">
-          Cancel
+          退出
         </span>
       </div>
     </div>

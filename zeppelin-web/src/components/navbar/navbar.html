@@ -26,9 +26,9 @@ limitations under the License.
     <div class="collapse navbar-collapse" ng-controller="NavCtrl as navbar">
       <ul class="nav navbar-nav" ng-if="ticket">
         <li class="dropdown notebook-list-dropdown" dropdown>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>Notebook <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>笔记本 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li ng-controller="NotenameCtrl as notenamectrl"><a href="" data-toggle="modal" data-target="#noteNameModal" ng-click="notenamectrl.getInterpreterSettings()"><i class="fa fa-plus"></i> Create new note</a></li>
+            <li ng-controller="NotenameCtrl as notenamectrl"><a href="" data-toggle="modal" data-target="#noteNameModal" ng-click="notenamectrl.getInterpreterSettings()"><i class="fa fa-plus"></i> 创建新笔记</a></li>
             <li class="divider"></li>
             <div id="notebook-list" class="scrollbar-container" ng-if="isDrawNavbarNoteList">
               <li class="filter-names" ng-include="'components/filterNoteNames/filter-note-names.html'"></li>
@@ -45,7 +45,7 @@ limitations under the License.
             </div>
           </ul>
         </li>
-        <li><a href="#/jobmanager">Job</a></li>
+        <li><a href="#/jobmanager">作业</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right" style="margin-right:5px;">
@@ -63,7 +63,7 @@ limitations under the License.
                 id="searchTermId"
                 ng-disabled="!navbar.connected"
                 class="form-control"
-                placeholder="Search your Notes"
+                placeholder="搜索笔记"
               />
               <span class="input-group-btn">
                 <button
@@ -89,21 +89,21 @@ limitations under the License.
             </button>
             <span ng-if="!ticket" style="margin: 5px;"></span>
             <ul class="dropdown-menu">
-              <li><a href="" data-toggle="modal" data-target="#aboutModal">About Zin</a></li>
+              <li><a href="" data-toggle="modal" data-target="#aboutModal">关于 Zin</a></li>
               <li role="separator" style="margin: 5px 0;" class="divider"></li>
-              <li><a href="#/interpreter">Interpreter</a></li>
-              <li><a href="#/notebookRepos">Notebook Repos</a></li>
-              <li><a href="#/credential">Credential</a></li>
-              <li><a href="#/helium">Helium</a></li>
-              <li><a href="#/configuration">Configuration</a></li>
+              <li><a href="#/interpreter">解释器</a></li>
+              <li><a href="#/notebookRepos">笔记本仓库</a></li>
+              <li><a href="#/credential">凭证</a></li>
+              <li><a href="#/helium">内核</a></li>
+              <li><a href="#/configuration">配置</a></li>
               <li ng-if="ticket.principal && ticket.principal !== 'anonymous'" role="separator" style="margin: 5px 0;" class="divider"></li>
-              <li ng-if="ticket.principal && ticket.principal !== 'anonymous'"><a ng-click="navbar.logout()">Logout</a></li>
+              <li ng-if="ticket.principal && ticket.principal !== 'anonymous'"><a ng-click="navbar.logout()">登出</a></li>
             </ul>
           </div>
         </li>
         <li class="nav-component" ng-if="!ticket">
           <button class="btn nav-login-btn" data-toggle="modal" data-target="#loginModal"
-                  ng-click="navbar.showLoginWindow()">Login
+                  ng-click="navbar.showLoginWindow()">登入
           </button>
         </li>
       </ul>

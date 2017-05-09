@@ -39,7 +39,7 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nThis pig tutorial use pig to do the same thing as spark tutorial. The default mode is mapreduce, you can also use other modes like local/tez_local/tez. For mapreduce mode, you need to have hadoop installed and export `HADOOP_CONF_DIR` in `zeppelin-env.sh`\n\nThe tutorial consists of 3 steps.\n\n* Use shell interpreter to download bank.csv and upload it to hdfs\n* use `%pig` to process the data\n* use `%pig.query` to query the data",
+      "text": "%md\n\nThis pig tutorial use pig to do the same thing as spark tutorial. The default mode is mapreduce, you can also use other modes like local/tez_local/tez. For mapreduce mode, you need to have hadoop installed and export `HADOOP_CONF_DIR` in `zin-env.sh`\n\nThe tutorial consists of 3 steps.\n\n* Use shell interpreter to download bank.csv and upload it to hdfs\n* use `%pig` to process the data\n* use `%pig.query` to query the data",
       "user": "anonymous",
       "dateUpdated": "Jan 22, 2017 12:48:55 PM",
       "config": {
@@ -63,7 +63,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eThis pig tutorial use pig to do the same thing as spark tutorial. The default mode is mapreduce, you can also use other modes like local/tez_local/tez. For mapreduce mode, you need to have hadoop installed and export \u003ccode\u003eHADOOP_CONF_DIR\u003c/code\u003e in \u003ccode\u003ezeppelin-env.sh\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eThe tutorial consists of 3 steps.\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eUse shell interpreter to download bank.csv and upload it to hdfs\u003c/li\u003e\n  \u003cli\u003euse \u003ccode\u003e%pig\u003c/code\u003e to process the data\u003c/li\u003e\n  \u003cli\u003euse \u003ccode\u003e%pig.query\u003c/code\u003e to query the data\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eThis pig tutorial use pig to do the same thing as spark tutorial. The default mode is mapreduce, you can also use other modes like local/tez_local/tez. For mapreduce mode, you need to have hadoop installed and export \u003ccode\u003eHADOOP_CONF_DIR\u003c/code\u003e in \u003ccode\u003ezin-env.sh\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eThe tutorial consists of 3 steps.\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eUse shell interpreter to download bank.csv and upload it to hdfs\u003c/li\u003e\n  \u003cli\u003euse \u003ccode\u003e%pig\u003c/code\u003e to process the data\u003c/li\u003e\n  \u003cli\u003euse \u003ccode\u003e%pig.query\u003c/code\u003e to query the data\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -322,7 +322,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Zeppelin Tutorial/Using Pig for querying data",
+  "name": "Zin教程/使用 Pig 做数据查询",
   "id": "2C57UKYWR",
   "angularObjects": {
     "2C3RWCVAG:shared_process": [],

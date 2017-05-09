@@ -51,7 +51,7 @@ limitations under the License.
           class="btn btn-default btn-sm dropdown-toggle"
           data-toggle="dropdown"
           style="font-weight:bold; background-color:#ffdf96; border: 1px solid #FED233">
-    He
+    他
   </button>
   <ul class="dropdown-menu"
       style="z-index:1002"
@@ -83,7 +83,7 @@ limitations under the License.
   <button type="button" class="btn btn-default btn-sm dropdown-toggle caretBtn"
           data-toggle="dropdown">
     <span class="caret" style="margin: 0px;"></span>
-    <span class="sr-only">Toggle Dropdown</span>
+    <span class="sr-only">切换下拉</span>
   </button>
   <ul class="dropdown-menu" role="menu" style="min-width: 70px;">
     <li ng-click="exportToDSV(',')"><a>CSV</a></li>
@@ -95,6 +95,6 @@ limitations under the License.
    ng-if="type=='TABLE' && !config.helium.activeApp && graphMode!='table' && !asIframe && !viewOnly"
    style="margin-left:10px; cursor:pointer; display: inline-block; vertical-align:top; position: relative; line-height:30px;">
   <a class="btnText" ng-click="toggleGraphSetting()">
-    settings <span ng-class="config.graph.optionOpen ? 'fa fa-caret-up' : 'fa fa-caret-down'"></span>
+    设置 <span ng-class="config.graph.optionOpen ? 'fa fa-caret-up' : 'fa fa-caret-down'"></span>
   </a>
 </span>
