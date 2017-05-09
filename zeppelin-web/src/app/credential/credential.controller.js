@@ -51,7 +51,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
     if ($scope.entity && _.isEmpty($scope.entity.trim()) &&
       $scope.username && _.isEmpty($scope.username.trim())) {
       ngToast.danger({
-        content: 'Username \\ Entity can not be empty.',
+        content: '用户名 \\ 实体不能为空.',
         verticalPosition: 'bottom',
         timeout: '3000'
       });
@@ -67,7 +67,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
     $http.put(baseUrlSrv.getRestApiBase() + '/credential', newCredential).
     success(function(data, status, headers, config) {
       ngToast.success({
-        content: 'Successfully saved credentials.',
+        content: '保存凭证成功.',
         verticalPosition: 'bottom',
         timeout: '3000'
       });
@@ -78,7 +78,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
     }).
     error(function(data, status, headers, config) {
       ngToast.danger({
-        content: 'Error saving credentials',
+        content: '保存凭证错误',
         verticalPosition: 'bottom',
         timeout: '3000'
       });
@@ -126,7 +126,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
 
   $scope.copyOriginCredentialsInfo = function() {
     ngToast.info({
-      content: 'Since entity is a unique key, you can edit only username & password',
+      content: '由于实体是一个唯一键，所以你只能编辑用户名和密码',
       verticalPosition: 'bottom',
       timeout: '3000'
     });
@@ -148,7 +148,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
     error(function(data, status, headers, config) {
       console.log('Error %o %o', status, data.message);
       ngToast.danger({
-        content: 'We couldn\'t save the credential',
+        content: '我们无法保存凭据',
         verticalPosition: 'bottom',
         timeout: '3000'
       });
@@ -163,7 +163,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
       closeByBackdrop: false,
       closeByKeyboard: false,
       title: '',
-      message: 'Do you want to delete this credential information?',
+      message: '你需要删除该凭据信息吗？',
       callback: function(result) {
         if (result) {
           $http.delete(baseUrlSrv.getRestApiBase() + '/credential/' + entity).

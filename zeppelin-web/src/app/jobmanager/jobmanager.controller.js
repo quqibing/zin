@@ -98,16 +98,16 @@ function JobmanagerCtrl($scope, websocketMsgSrv, $interval, ngToast, $q, $timeou
       filterValueInterpreter: '*',
       isSortByAsc: true
     };
-    $scope.sortTooltipMsg = 'Switch to sort by desc';
+    $scope.sortTooltipMsg = '切换倒序排列';
     $scope.jobTypeFilter = jobManagerFilter;
 
     websocketMsgSrv.getNoteJobsList();
 
     $scope.$watch('filterConfig.isSortByAsc', function (value) {
       if (value) {
-        $scope.sortTooltipMsg = 'Switch to sort by desc';
+        $scope.sortTooltipMsg = '切换倒序排列';
       } else {
-        $scope.sortTooltipMsg = 'Switch to sort by asc';
+        $scope.sortTooltipMsg = '切换正序排列';
       }
     });
 
