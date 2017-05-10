@@ -40,7 +40,7 @@ function NotebookReposCtrl($http, baseUrlSrv, ngToast) {
       valueform.$show();
     }).error(function() {
       ngToast.danger({
-        content: 'We couldn\'t save that NotebookRepo\'s settings',
+        content: '不能保存笔记本仓库设置',
         verticalPosition: 'bottom',
         timeout: '3000'
       });

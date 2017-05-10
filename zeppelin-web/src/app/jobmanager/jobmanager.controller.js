@@ -48,7 +48,7 @@ function JobmanagerCtrl($scope, websocketMsgSrv, $interval, ngToast, $q, $timeou
       }
       return $scope.activeInterpreters[index].name;
     } else {
-      return 'Interpreter is not set';
+      return '没有设置解释器';
     }
   };
 

@@ -48,7 +48,7 @@ function NoteImportCtrl($scope, $timeout, websocketMsgSrv) {
     var reader = new FileReader();
 
     if (file.size > limit) {
-      $scope.note.errorText = 'File size limit Exceeded!';
+      $scope.note.errorText = '文件大小超限!';
       $scope.$apply();
       return;
     }
@@ -90,13 +90,13 @@ function NoteImportCtrl($scope, $timeout, websocketMsgSrv) {
           withCredentials: false
         },
         error: function(xhr, ajaxOptions, thrownError) {
-          $scope.note.errorText = 'Unable to Fetch URL';
+          $scope.note.errorText = '无法访问 URL';
           $scope.$apply();
         }}).done(function(data) {
         vm.processImportJson(data);
       });
     } else {
-      $scope.note.errorText = 'Enter URL';
+      $scope.note.errorText = '输入 URL';
       $scope.$apply();
     }
   };
@@ -106,7 +106,7 @@ function NoteImportCtrl($scope, $timeout, websocketMsgSrv) {
       try {
         result = JSON.parse(result);
       } catch (e) {
-        $scope.note.errorText = 'JSON parse exception';
+        $scope.note.errorText = 'JSON 解析异常';
         $scope.$apply();
         return;
       }
@@ -121,7 +121,7 @@ function NoteImportCtrl($scope, $timeout, websocketMsgSrv) {
       websocketMsgSrv.importNote(result);
       //angular.element('#noteImportModal').modal('hide');
     } else {
-      $scope.note.errorText = 'Invalid JSON';
+      $scope.note.errorText = '非法 JSON';
     }
     $scope.$apply();
   };

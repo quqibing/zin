@@ -40,7 +40,7 @@ function JobCtrl($scope, $http, baseUrlSrv) {
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Run all paragraphs?',
+      message: '运行全部段落?',
       callback: function(result) {
         if (result) {
           $http({
@@ -58,7 +58,7 @@ function JobCtrl($scope, $http, baseUrlSrv) {
             }
             BootstrapDialog.alert({
               closable: true,
-              title: 'Execution Failure',
+              title: '执行失败',
               message: errorText
             });
           });
@@ -71,7 +71,7 @@ function JobCtrl($scope, $http, baseUrlSrv) {
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Stop all paragraphs?',
+      message: '停止全部段落?',
       callback: function(result) {
         if (result) {
           $http({
@@ -90,7 +90,7 @@ function JobCtrl($scope, $http, baseUrlSrv) {
             }
             BootstrapDialog.alert({
               closable: true,
-              title: 'Stop Failure',
+              title: '停止失败',
               message: errorText
             });
           });

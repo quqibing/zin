@@ -49,7 +49,7 @@ function LoginCtrl($scope, $rootScope, $http, $httpParamSerializer, baseUrlSrv, 
 
       }
     }, function errorCallback(errorResponse) {
-      $scope.loginParams.errorText = 'The username and password that you entered don\'t match.';
+      $scope.loginParams.errorText = '输入的用户名和密码不匹配.';
       $scope.SigningIn = false;
     });
 

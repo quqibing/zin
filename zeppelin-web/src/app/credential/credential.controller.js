@@ -148,7 +148,7 @@ function CredentialCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
     error(function(data, status, headers, config) {
       console.log('Error %o %o', status, data.message);
       ngToast.danger({
-        content: '我们无法保存凭据',
+        content: '无法保存凭据',
         verticalPosition: 'bottom',
         timeout: '3000'
       });

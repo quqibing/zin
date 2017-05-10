@@ -17,17 +17,17 @@ clipboardCtrl.$inject = ['$scope'];
 function clipboardCtrl($scope) {
   $scope.complete = function(e) {
     $scope.copied = true;
-    $scope.tooltip = 'Copied!';
+    $scope.tooltip = '已复制!';
     setTimeout(function() {
-      $scope.tooltip = 'Copy to clipboard';
+      $scope.tooltip = '复制到剪贴板';
     }, 400);
   };
   $scope.$watch('input', function() {
     $scope.copied = false;
-    $scope.tooltip = 'Copy to clipboard';
+    $scope.tooltip = '复制到剪贴板';
   });
   $scope.clipError = function(e) {
     console.log('Error: ' + e.name + ' - ' + e.message);
-    $scope.tooltip = 'Not supported browser';
+    $scope.tooltip = '浏览器不支持';
   };
 }
