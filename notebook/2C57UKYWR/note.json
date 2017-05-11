@@ -322,7 +322,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Zin教程/使用 Pig 做数据查询",
+  "name": "Workbench 教程/使用 Pig 做数据查询",
   "id": "2C57UKYWR",
   "angularObjects": {
     "2C3RWCVAG:shared_process": [],

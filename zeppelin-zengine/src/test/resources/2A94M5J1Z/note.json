@@ -1,7 +1,7 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n## 欢迎使用 Zin.\n##### 这是一个实况教程，你可以运行你自己的代码. (Shift-Enter 运行)",
+      "text": "%md\n## 欢迎使用 Workbench.\n##### 这是一个实况教程，你可以运行你自己的代码. (Shift-Enter 运行)",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -24,7 +24,7 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003e欢迎使用 Zin.\u003c/h2\u003e\n\u003ch5\u003e这是一个实况教程，你可以运行你自己的代码. (Shift-Enter 运行)\u003c/h5\u003e\n"
+        "msg": "\u003ch2\u003e欢迎使用 Workbench.\u003c/h2\u003e\n\u003ch5\u003e这是一个实况教程，你可以运行你自己的代码. (Shift-Enter 运行)\u003c/h5\u003e\n"
       },
       "dateCreated": "Feb 13, 2015 11:16:21 PM",
       "dateStarted": "Apr 1, 2015 9:11:09 PM",
@@ -331,7 +331,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Zin 教程",
+  "name": "Workbench 教程",
   "id": "2A94M5J1Z",
   "angularObjects": {},
   "config": {
