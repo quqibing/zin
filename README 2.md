@@ -27,3 +27,4 @@ Please go to [install](http://zeppelin.apache.org/docs/snapshot/install/install.
 Please check [Build from source](http://zeppelin.apache.org/docs/snapshot/install/build.html) to build Zeppelin from source.
 
 
+Redistributed and localized by Xianglei (github.com/xianglei)
