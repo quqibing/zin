@@ -63,12 +63,12 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
           websocketMsgSrv.runParagraph(paragraph.id, paragraph.title, paragraph.text,
             paragraph.config, paragraph.settings.params);
         } else {
-          ngToast.danger({content: 'Cannot find a paragraph with id \'' + paragraphId + '\'',
+          ngToast.danger({content: '无法找到段落 通过 id \'' + paragraphId + '\'',
             verticalPosition: 'top', dismissOnTimeout: false});
         }
       } else {
         ngToast.danger({
-          content: 'Please provide a \'paragraphId\' when calling z.runParagraph(paragraphId)',
+          content: '请提供一个 \'paragraphId\' 当调用 z.runParagraph(paragraphId)',
           verticalPosition: 'top', dismissOnTimeout: false});
       }
     },
@@ -80,7 +80,7 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
         websocketMsgSrv.clientBindAngularObject($routeParams.noteId, varName, value, paragraphId);
       } else {
         ngToast.danger({
-          content: 'Please provide a \'paragraphId\' when calling ' +
+          content: '请提供一个 \'paragraphId\' 当调用 ' +
           'z.angularBind(varName, value, \'PUT_HERE_PARAGRAPH_ID\')',
           verticalPosition: 'top', dismissOnTimeout: false});
       }
@@ -93,7 +93,7 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
         websocketMsgSrv.clientUnbindAngularObject($routeParams.noteId, varName, paragraphId);
       } else {
         ngToast.danger({
-          content: 'Please provide a \'paragraphId\' when calling ' +
+          content: '请提供一个 \'paragraphId\' 当调用 ' +
           'z.angularUnbind(varName, \'PUT_HERE_PARAGRAPH_ID\')',
           verticalPosition: 'top', dismissOnTimeout: false});
       }
@@ -125,15 +125,15 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
 
   var initializeDefault = function(config) {
     var forms = $scope.paragraph.settings.forms;
-    
+
     if (!config.colWidth) {
       config.colWidth = 12;
     }
-  
+
     if (config.enabled === undefined) {
       config.enabled = true;
     }
-  
+
     for (var idx in forms) {
       if (forms[idx]) {
         if (forms[idx].options) {
@@ -324,7 +324,7 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
     if (paragraphs[paragraphs.length - 1].id.indexOf(paragraph.id) === 0) {
       BootstrapDialog.alert({
         closable: true,
-        message: 'The last paragraph can\'t be deleted.',
+        message: '最后的段落不能被删除.',
         callback: function(result) {
           if (result) {
             $scope.editor.focus();
@@ -335,7 +335,7 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
       BootstrapDialog.confirm({
         closable: true,
         title: '',
-        message: 'Do you want to delete this paragraph?',
+        message: '你想删除该段落吗?',
         callback: function(result) {
           if (result) {
             console.log('Remove paragraph');
