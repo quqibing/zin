@@ -37,7 +37,7 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
     BootstrapDialog.confirm({
       closable: true,
       title: '将该目录移入回收站?',
-      message: '该目录竟会被移入 <strong>回收站</strong>.',
+      message: '该目录将会被移入 <strong>回收站</strong>.',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.moveFolderToTrash(folderId);
@@ -139,7 +139,7 @@ function noteActionSrv(websocketMsgSrv, $location, renameSrv, noteListDataFactor
             type: BootstrapDialog.TYPE_WARNING,
             closable: true,
             title: '警告! 该文件夹将会被合并',
-            message: 'The folder will be merged into <strong>' + newFolderId + '</strong>. Are you sure?',
+            message: '该文件夹将会被合并到 <strong>' + newFolderId + '</strong>. 确定吗?',
             callback: function(result) {
               if (result) {
                 websocketMsgSrv.renameFolder(folderId, newFolderId);

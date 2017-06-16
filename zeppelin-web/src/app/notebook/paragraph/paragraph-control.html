@@ -24,18 +24,18 @@ limitations under the License.
 
   <!-- Run / Cancel button -->
   <span ng-if="!revisionView">
-    <span class="icon-control-play" style="cursor:pointer;color:#3071A9" tooltip-placement="top" tooltip="运行该段落 (Shift+Enter)"
+    <span class="icon-control-play" style="cursor:pointer;color:#3071A9" tooltip-placement="top" uib-tooltip="运行该段落 (Shift+Enter)"
           ng-click="runParagraph(getEditorValue())"
           ng-show="paragraph.status!='RUNNING' && paragraph.status!='PENDING' && paragraph.config.enabled"></span>
     <span class="icon-control-pause" style="cursor:pointer;color:#CD5C5C" tooltip-placement="top"
-          tooltip="取消 (Ctrl+{{ (isMac ? 'Option' : 'Alt') }}+C)"
+          uib-tooltip="取消 (Ctrl+{{ (isMac ? 'Option' : 'Alt') }}+C)"
           ng-click="cancelParagraph(paragraph)"
           ng-show="paragraph.status=='RUNNING' || paragraph.status=='PENDING'"></span>
     <span class="{{paragraph.config.editorHide ? 'icon-size-fullscreen' : 'icon-size-actual'}}" style="cursor:pointer" tooltip-placement="top"
-          tooltip="{{(paragraph.config.editorHide ? '显示' : '隐藏')}} 编辑器 (Ctrl+{{ (isMac ? 'Option' : 'Alt') }}+E)"
+          uib-tooltip="{{(paragraph.config.editorHide ? '显示' : '隐藏')}} 编辑器 (Ctrl+{{ (isMac ? 'Option' : 'Alt') }}+E)"
           ng-click="toggleEditor(paragraph)"></span>
     <span class="{{paragraph.config.tableHide ? 'icon-notebook' : 'icon-book-open'}}" style="cursor:pointer" tooltip-placement="top"
-          tooltip="{{(paragraph.config.tableHide ? '显示' : '隐藏')}} 输出 (Ctrl+{{ (isMac ? 'Option' : 'Alt') }}+O)"
+          uib-tooltip="{{(paragraph.config.tableHide ? '显示' : '隐藏')}} 输出 (Ctrl+{{ (isMac ? 'Option' : 'Alt') }}+O)"
           ng-click="toggleOutput(paragraph)"></span>
     <span class="dropdown navbar-right">
       <span class="icon-settings" style="cursor:pointer"
@@ -50,7 +50,7 @@ limitations under the License.
               ngclipboard-error="clipError($event)"
               data-clipboard-text="{{paragraph.id}}"
               tooltip-placement="top"
-              tooltip="{{tooltip}}">
+              uib-tooltip="{{tooltip}}">
             <span>{{paragraph.id}}</span>
           </a>
         </li>
@@ -62,7 +62,7 @@ limitations under the License.
           <form style="display:inline; float:right">
             <input type="checkbox"
                    style="width:16px; margin-right:20px"
-                   tooltip-placement="top" tooltip="即时反选该选项，仍能通过点击Enter来运行段落"
+                   tooltip-placement="top" uib-tooltip="即使反选该选项，仍能通过点击Enter来运行段落"
                    ng-checked="{{paragraph.config.runOnSelectionChange}}"
                    ng-click="turnOnAutoRun(paragraph)"/>
           </form>
@@ -112,7 +112,7 @@ limitations under the License.
         </li>
         <li>
           <a ng-click="toggleEnableDisable(paragraph)"><span class="icon-control-play shortcut-icon"></span>
-            {{paragraph.config.enabled ? "禁用" : "启用"}} 运行
+            {{paragraph.config.enabled ? "Disable" : "Enable"}} 运行
             <span class="shortcut-keys">Ctrl+ {{ isMac ? 'Option' : 'Alt'}}+R</span></a>
         </li>
         <li>

@@ -35,7 +35,7 @@ limitations under the License.
           <div>
             <a ng-click="restartInterpreter(item)"
                ng-class="{'inactivelink': !item.selected}"
-               tooltip="Restart">
+               uib-tooltip="重启">
               <span class="glyphicon glyphicon-refresh btn-md"></span>
             </a>&nbsp
             <div as-sortable-item-handle
@@ -59,21 +59,21 @@ limitations under the License.
     </div>
     <br />
     <div>
-      <button class="btn btn-primary" ng-click="saveSetting()">保存</button>
-      <button class="btn btn-default" ng-click="closeSetting()">退出</button>
+      <button class="btn btn-primary" ng-click="saveSetting()">Save</button>
+      <button class="btn btn-default" ng-click="closeSetting()">Cancel</button>
     </div>
   </div>
 
   <!-- permissions -->
   <div ng-if="showPermissions && ticket.principal && !isAnonymous" class="permissions">
     <div>
-      <h4>笔记权限 (只有该笔记所有者可以变更)</h4>
+      <h4>Note Permissions (Only note owners can change)</h4>
     </div>
     <hr />
     <div>
       <p>
-        在下面表单输入逗号分隔的用户和组. <br />
-        空白表单 (*) 意味着人和人都可以进行操作.
+        Enter comma separated users and groups in the fields. <br />
+        Empty field (*) implies anyone can do the operation.
       </p>
       <div class="permissionsForm"
            data-ng-model="permissions">
@@ -81,26 +81,26 @@ limitations under the License.
           <select id="selectOwners" multiple="multiple">
             <option ng-repeat="owner in permissions.owners" selected="selected">{{owner}}</option>
           </select>
-          所有者可以变更权限，读写该笔记.
+          Owners can change permissions,read and write the note.
         </p>
         <p><span class="writers">Writers </span>
           <select id="selectWriters" multiple="multiple">
             <option ng-repeat="writers in permissions.writers" selected="selected">{{writers}}</option>
           </select>
-            作者可以读写该笔记.
+            Writers can read and write the note.
         </p>
         <p><span class="readers">Readers </span>
           <select id="selectReaders" multiple="multiple">
             <option ng-repeat="readers in permissions.readers" selected="selected">{{readers}}</option>
           </select>
-            阅者只能读该笔记.
+            Readers can only read the note.
         </p>
       </div>
     </div>
     <br />
     <div>
-      <button class="btn btn-primary" ng-click="savePermissions()">保存</button>
-      <button class="btn btn-default" ng-click="closePermissions()">退出</button>
+      <button class="btn btn-primary" ng-click="savePermissions()">Save</button>
+      <button class="btn btn-default" ng-click="closePermissions()">Cancel</button>
     </div>
   </div>
 

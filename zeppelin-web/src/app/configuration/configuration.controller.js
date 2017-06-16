@@ -29,7 +29,7 @@ function ConfigurationCtrl($scope, $rootScope, $http, baseUrlSrv, ngToast) {
     error(function(data, status, headers, config) {
       if (status === 401) {
         ngToast.danger({
-          content: '你没有权限访问本页面',
+          content: '你没有访问本页面的权限',
           verticalPosition: 'bottom',
           timeout: '3000'
         });

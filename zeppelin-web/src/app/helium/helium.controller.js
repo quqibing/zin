@@ -149,9 +149,9 @@
         closeByBackdrop: false,
         closeByKeyboard: false,
         title: '',
-        message: 'Do you want to enable ' + name + '?' +
+        message: '你想启用 ' + name + ' 吗?' +
           '<div style="color:gray">' + artifact + '</div>' +
-          '<div style="border-top: 1px solid #efefef; margin-top: 10px; padding-top: 5px;">License</div>' +
+          '<div style="border-top: 1px solid #efefef; margin-top: 10px; padding-top: 5px;">许可证</div>' +
           '<div style="color:gray">' + license + '</div>',
         callback: function(result) {
           if (result) {
@@ -183,7 +183,7 @@
         closeByBackdrop: false,
         closeByKeyboard: false,
         title: '',
-        message: 'Do you want to disable ' + name + '?',
+        message: '你想禁用 ' + name + ' 吗?',
         callback: function(result) {
           if (result) {
             confirm.$modalFooter.find('button').addClass('disabled');
@@ -214,6 +214,10 @@
       } else {
         $scope.showVersions[pkgName] = true;
       }
+    };
+
+    $scope.getPackageSize = function(pkgSearchResult) {
+      return _.size(pkgSearchResult)
     };
   }
 })();

@@ -41,7 +41,10 @@ limitations under the License.
     <div class="row">
       <div class="col-md-4">
         <div class="input-group" style="margin-top: 10px">
-          <input type="text" ng-model="searchInterpreter" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="搜索解释器"/>
+          <input type="text" ng-model="searchInterpreter"
+                 class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                 ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 300, 'blur': 0 } }"
+                 placeholder="搜索解释器"/>
           <span class="input-group-btn">
             <button type="submit" class="btn btn-default" ng-disabled="!navbar.connected">
               <i class="glyphicon glyphicon-search"></i>
@@ -109,18 +112,18 @@ limitations under the License.
           <small ng-switch="setting.status">
             <small ng-switch-when="READY">
               <i style="color: green; margin-right: 3px;" class="fa fa-circle"
-                 tooltip="就绪">
+                 uib-tooltip="就绪">
               </i>
             </small>
             <small ng-switch-when="ERROR">
               <i style="color: red; cursor: pointer" class="fa fa-circle"
                  ng-click="showErrorMessage(setting)"
-                 tooltip="下载依赖错误">
+                 uib-tooltip="下载依赖错误">
               </i>
             </small>
             <small ng-switch-default>
               <i style="color: blue" class="fa fa-spinner spinAnimation"
-                 tooltip="正在下载依赖">
+                 uib-tooltip="正在下载依赖">
               </i>
             </small>
           </small>
@@ -178,7 +181,7 @@ limitations under the License.
                 </li>
               </ul>
             </span>
-            于
+            in
             <span class="btn-group">
               <button type="button" class="btn btn-default btn-xs dropdown-toggle"
                       data-toggle="dropdown"
@@ -196,7 +199,7 @@ limitations under the License.
                 <li
                   ng-if="getInterpreterRunningOption(setting.id) === 'Globally'">
                   <a style="cursor:pointer"
-                     tooltip="单一解释器实例在笔记间共享"
+                     uib-tooltip="单一解释器实例在笔记间共享"
                      ng-click="setPerNoteOption(setting.id, 'shared')">
                     单笔记共享
                   </a>
@@ -205,7 +208,7 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per Note'"
-                     tooltip="为每个笔记生成单独的解释器实例"
+                     uib-tooltip="为每个笔记生成单独的解释器实例"
                      ng-click="setPerNoteOption(setting.id, 'scoped')">
                     单笔记查看
                   </a>
@@ -213,7 +216,7 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per User'"
-                     tooltip="为每个用户生成单独的解释器实例"
+                     uib-tooltip="为每个用户生成单独的解释器实例"
                      ng-click="setPerUserOption(setting.id, 'scoped')">
                     单用户查看
                   </a>
@@ -222,7 +225,7 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per Note'"
-                     tooltip="为每个笔记生成单独的解释器进程"
+                     uib-tooltip="为每个笔记生成单独的解释器进程"
                      ng-click="setPerNoteOption(setting.id, 'isolated')">
                     单笔记隔离
                   </a>
@@ -230,7 +233,7 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per User'"
-                     tooltip="为每个用户生成单独的解释器进程"
+                     uib-tooltip="为每个用户生成单独的解释器进程"
                      ng-click="setPerUserOption(setting.id, 'isolated')">
                     单用户隔离
                   </a>
@@ -285,14 +288,14 @@ limitations under the License.
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <a style="cursor:pointer"
-                       tooltip="为每个笔记生成单独的解释器实例"
+                       uib-tooltip="为每个笔记生成单独的解释器实例"
                        ng-click="setPerNoteOption(setting.id, 'scoped')">
                       单笔记查看
                     </a>
                   </li>
                   <li>
                     <a style="cursor:pointer"
-                       tooltip="为每个笔记生成单独的解释器进程"
+                       uib-tooltip="为每个笔记生成单独的解释器进程"
                        ng-click="setPerNoteOption(setting.id, 'isolated')">
                       单笔记隔离
                     </a>
@@ -432,7 +435,7 @@ limitations under the License.
       <div class="col-md-12" ng-show="!_.isEmpty(setting.dependencies) || valueform.$visible">
         <h5>依赖</h5>
         <p class="gray40-message" style="font-size:12px" ng-show="valueform.$visible">
-          这些以来会在解释器运行时自动添加到classpath中.</p>
+          这些依赖会在解释器运行时自动添加到classpath中.</p>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -450,7 +453,7 @@ limitations under the License.
             </td>
             <td>
               <textarea ng-if="valueform.$visible" ng-model="dep.exclusions"
-                        placeholder="(Optional) comma separated groupId:artifactId list"
+                        placeholder="(可选) 逗号分隔的 groupId:artifactId 列表"
                         form="valueform"
                         e-msd-elastic
                         ng-list="">

@@ -25,23 +25,23 @@ limitations under the License.
 
     <div class="collapse navbar-collapse" ng-controller="NavCtrl as navbar">
       <ul class="nav navbar-nav" ng-if="ticket">
-        <li class="dropdown notebook-list-dropdown" dropdown>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>笔记本 <span class="caret"></span></a>
+        <li class="dropdown notebook-list-dropdown" uib-dropdown>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle>笔记本 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li ng-controller="NotenameCtrl as notenamectrl"><a href="" data-toggle="modal" data-target="#noteNameModal" ng-click="notenamectrl.getInterpreterSettings()"><i class="fa fa-plus"></i> 创建新笔记</a></li>
             <li class="divider"></li>
             <div id="notebook-list" class="scrollbar-container" ng-if="isDrawNavbarNoteList">
               <li class="filter-names" ng-include="'components/filterNoteNames/filter-note-names.html'"></li>
               <div ng-if="!query.q || query.q === ''">
-              <li ng-repeat="note in navbar.notes.root.children | orderBy:navbar.arrayOrderingSrv.noteListOrdering track by note.id"
-                  ng-class="{'active' : navbar.isActive(note.id)}" ng-include="'components/navbar/navbar-noteList-elem.html'">
-              </li>
-            </div>
-            <div ng-if="query.q">
-              <li ng-repeat="note in navbar.notes.flatList | filter : query.q | orderBy:navbar.arrayOrderingSrv.noteListOrdering track by note.id"
-                  ng-class="{'active' : navbar.isActive(note.id)}" ng-include="'components/navbar/navbar-noteList-elem.html'">
-              </li>
-            </div>
+                <li ng-repeat="note in navbar.notes.root.children | orderBy:navbar.arrayOrderingSrv.noteListOrdering track by note.id"
+                    ng-class="{'active' : navbar.isActive(note.id)}" ng-include="'components/navbar/navbar-noteList-elem.html'">
+                </li>
+              </div>
+              <div ng-if="query.q">
+                <li ng-repeat="note in navbar.notes.flatList | filter : query.q | orderBy:navbar.arrayOrderingSrv.noteListOrdering track by note.id"
+                    ng-class="{'active' : navbar.isActive(note.id)}" ng-include="'components/navbar/navbar-noteList-elem.html'">
+                </li>
+              </div>
             </div>
           </ul>
         </li>
@@ -80,9 +80,9 @@ limitations under the License.
         <li style="margin-left: 10px;">
           <div class="dropdown">
             <i ng-if="navbar.connected" class="fa fa-circle server-connected"
-               tooltip="WebSocket Connected" tooltip-placement="bottom" style="margin-top: 7px; margin-right: 0px; vertical-align: top"></i>
+               uib-tooltip="WebSocket Connected" tooltip-placement="bottom" style="margin-top: 7px; margin-right: 0px; vertical-align: top"></i>
             <i ng-if="!navbar.connected" class="fa fa-circle server-disconnected"
-               tooltip="WebSocket Disconnected" tooltip-placement="bottom" style="margin-top: 7px; vertical-align: top"></i>
+               uib-tooltip="WebSocket Disconnected" tooltip-placement="bottom" style="margin-top: 7px; vertical-align: top"></i>
             <button ng-if="ticket" class="nav-btn dropdown-toggle" type="button" data-toggle="dropdown" style="margin:11px 5px 0 0; padding-left: 0px;">
               <span class="username">{{ticket.principal}}</span>
               <span class="caret" style="margin-bottom: 8px"></span>
@@ -94,7 +94,7 @@ limitations under the License.
               <li><a href="#/interpreter">解释器</a></li>
               <li><a href="#/notebookRepos">笔记本仓库</a></li>
               <li><a href="#/credential">凭证</a></li>
-              <li><a href="#/helium">内核</a></li>
+              <li><a href="#/helium">氦内核</a></li>
               <!--<li><a href="#/configuration">配置</a></li>-->
               <li ng-if="ticket.principal && ticket.principal !== 'anonymous'" role="separator" style="margin: 5px 0;" class="divider"></li>
               <li ng-if="ticket.principal && ticket.principal !== 'anonymous'"><a ng-click="navbar.logout()">登出</a></li>
@@ -124,14 +124,14 @@ limitations under the License.
 
         <div class="row about">
           <div class="hidden-xs col-sm-4 logo">
-            <img src="assets/images/zepLogo.png" alt="Workbench" title="Workbench" />
+            <img src="assets/images/zepLogo.png" alt="AdMaster Workbench" title="AdMaster Workbench" />
           </div>
           <div class="col-xs-12 col-sm-8 content">
-            <h3>Workbench</h3>
+            <h3>AdMaster Workbench</h3>
             <br/>
             <span id="i18n-14">版本</span>
             <!--{{zeppelinVersion}}-->
-            workbench-1.1.1-build11211
+            workbench-1.1.2-build11222
             <br/>
             <br/>
             <!--<a href="http://zeppelin.apache.org/" target="_blank"><span id="i18n-15">Get involved!</span></a>

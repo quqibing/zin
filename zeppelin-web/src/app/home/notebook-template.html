@@ -25,28 +25,28 @@ limitations under the License.
       <i style="margin-left: 10px;"
          class="fa fa-pencil notebook-list-btn" ng-show="showNoteButton"
          ng-click="node.path ? renameNote(node.id, node.path) : renameNote(node.id, node.name)"
-         tooltip-placement="bottom" tooltip="重命名笔记">
+         tooltip-placement="bottom" uib-tooltip="重命名笔记">
       </i>
     </a>
     <a ng-if="!node.isTrash" style="text-decoration: none;">
       <i class="fa fa-eraser notebook-list-btn" ng-show="showNoteButton" ng-click="clearAllParagraphOutput(node.id)"
-         tooltip-placement="bottom" tooltip="清除输出">
+         tooltip-placement="bottom" uib-tooltip="清除输出">
       </i>
     </a>
     <a ng-if="!node.isTrash" style="text-decoration: none;">
       <i class="fa fa-trash-o notebook-list-btn" ng-show="showNoteButton" ng-click="moveNoteToTrash(node.id)"
-         tooltip-placement="bottom" tooltip="笔记移入回收站">
+         tooltip-placement="bottom" uib-tooltip="将笔记移入回收站">
       </i>
     </a>
     <!-- if note is in trash -->
     <a ng-if="node.isTrash">
       <i class="fa fa-undo notebook-list-btn" ng-show="showNoteButton" ng-click="restoreNote(node.id)"
-         tooltip-placement="bottom" tooltip="恢复笔记">
+         tooltip-placement="bottom" uib-tooltip="恢复笔记">
       </i>
     </a>
     <a ng-if="node.isTrash" style="font-size: 16px;">
       <i class="fa fa-times notebook-list-btn" ng-show="showNoteButton" ng-click="removeNote(node.id)"
-         tooltip-placement="bottom" tooltip="永久移除笔记">
+         tooltip-placement="bottom" uib-tooltip="永久移除笔记">
       </i>
     </a>
   </div>
@@ -61,24 +61,24 @@ limitations under the License.
       <a ng-if="!node.isTrash" style="text-decoration: none;">
         <i style="margin-left: 10px;"
            class="fa fa-pencil notebook-list-btn" ng-show="showFolderButton" ng-click="renameFolder(node)"
-           tooltip-placement="bottom" tooltip="重命名文件夹">
+           tooltip-placement="bottom" uib-tooltip="重命名文件夹">
         </i>
       </a>
       <!-- if folder is not in trash -->
       <a ng-if="!node.isTrash">
         <i class="fa fa-trash-o notebook-list-btn" ng-show="showFolderButton" ng-click="moveFolderToTrash(node.id)"
-           tooltip-placement="bottom" tooltip="文件夹移入回收站">
+           tooltip-placement="bottom" uib-tooltip="将文件夹移入回收站">
         </i>
       </a>
       <!-- if folder is in trash -->
       <a ng-if="node.isTrash">
         <i class="fa fa-undo notebook-list-btn" ng-show="showFolderButton" ng-click="restoreFolder(node.id)"
-           tooltip-placement="bottom" tooltip="恢复文件夹">
+           tooltip-placement="bottom" uib-tooltip="恢复文件夹">
         </i>
       </a>
       <a ng-if="node.isTrash" style="font-size: 16px">
         <i class="fa fa-times notebook-list-btn" ng-show="showFolderButton" ng-click="removeFolder(node.id)"
-           tooltip-placement="bottom" tooltip="永久移除文件夹">
+           tooltip-placement="bottom" uib-tooltip="永久移除文件夹">
         </i>
       </a>
     </div>
@@ -93,16 +93,16 @@ limitations under the License.
     <div ng-mouseenter="showFolderButton=true"
          ng-mouseleave="showFolderButton=false">
       <a style="text-decoration: none; cursor: pointer;" ng-click="toggleFolderNode(node)">
-        <i style="font-size: 14px;" class="fa fa-trash-o"></i> 回收站
+        <i style="font-size: 14px;" class="fa fa-trash-o"></i> Trash
       </a>
       <a style="text-decoration: none;">
         <i style="margin-left: 10px"
            class="fa fa-undo notebook-list-btn" ng-show="showFolderButton" ng-click="restoreAll()"
-           tooltip-placement="bottom" tooltip="全部恢复">
+           tooltip-placement="bottom" uib-tooltip="恢复全部">
         </i>
         <i style="font-size: 16px;"
            class="fa fa-times notebook-list-btn" ng-show="showFolderButton" ng-click="emptyTrash()"
-           tooltip-placement="bottom" tooltip="清空回收站">
+           tooltip-placement="bottom" uib-tooltip="清空回收站">
         </i>
       </a>
     </div>

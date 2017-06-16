@@ -15,7 +15,7 @@ limitations under the License.
   <h3>
     <div style="float: left; width: auto; max-width: 40%"
       ng-controller="ElasticInputCtrl as input">
-      <input type="text" pu-elastic-input class="form-control2" placeholder="New name" style="min-width: 0px; max-width: 95%;"
+      <input type="text" pu-elastic-input class="form-control2" placeholder="新名称" style="min-width: 0px; max-width: 95%;"
            ng-if="input.showEditor" ng-model="input.value" ng-escape="input.showEditor = false" focus-if="input.showEditor"
            ng-blur="updateNoteName(input.value);input.showEditor = false;" ng-enter="updateNoteName(input.value);input.showEditor = false;" />
       <p class="form-control-static2" ng-click="input.showEditor = !revisionView; input.value = note.name" ng-show="!input.showEditor">{{noteName(note)}}</p>
@@ -26,7 +26,7 @@ limitations under the License.
               class="btn btn-default btn-xs"
               ng-click="runAllParagraphs(note.id)"
               ng-class="{'disabled':isNoteRunning()}"
-              tooltip-placement="bottom" tooltip="运行所有段落"
+              tooltip-placement="bottom" uib-tooltip="运行所有段落"
               ng-disabled="revisionView">
         <i class="icon-control-play"></i>
       </button>
@@ -34,14 +34,14 @@ limitations under the License.
               class="btn btn-default btn-xs"
               ng-click="toggleAllEditor()"
               ng-hide="viewOnly"
-              tooltip-placement="bottom" tooltip="显示 / 隐藏 代码"
+              tooltip-placement="bottom" uib-tooltip="显示 / 隐藏 代码"
               ng-disabled="revisionView">
         <i ng-class="editorToggled ?  'fa icon-size-fullscreen' :'fa icon-size-actual'"></i></button>
       <button type="button"
               class="btn btn-default btn-xs"
               ng-click="toggleAllTable()"
               ng-hide="viewOnly"
-              tooltip-placement="bottom" tooltip="显示/隐藏 输出"
+              tooltip-placement="bottom" uib-tooltip="显示 / 隐藏 输出"
               ng-disabled="revisionView">
         <i ng-class="tableToggled ? 'fa icon-notebook' : 'fa icon-book-open'"></i>
       </button>
@@ -50,7 +50,7 @@ limitations under the License.
               ng-click="clearAllParagraphOutput(note.id)"
               ng-hide="viewOnly"
               ng-class="{'disabled':isNoteRunning()}"
-              tooltip-placement="bottom" tooltip="清空输出"
+              tooltip-placement="bottom" uib-tooltip="清空输出"
               ng-disabled="revisionView">
         <i class="fa fa-eraser"></i>
       </button>
@@ -58,7 +58,7 @@ limitations under the License.
       <button type="button"
               class="btn btn-default btn-xs"
               ng-hide="viewOnly"
-              tooltip-placement="bottom" tooltip="克隆该笔记" data-source-note-name="{{note.name}}"
+              tooltip-placement="bottom" uib-tooltip="克隆该笔记" data-source-note-name="{{note.name}}"
               data-toggle="modal" data-target="#noteNameModal" data-clone="true"
               ng-disabled="revisionView">
         <i class="fa fa-copy"></i>
@@ -67,7 +67,7 @@ limitations under the License.
               class="btn btn-default btn-xs"
               ng-hide="viewOnly"
               ng-click="exportNote()"
-              tooltip-placement="bottom" tooltip="导出该笔记"
+              tooltip-placement="bottom" uib-tooltip="导出该笔记"
               ng-disabled="revisionView">
         <i class="fa fa-download"></i>
       </button>
@@ -78,7 +78,7 @@ limitations under the License.
               ng-if="ticket.principal && ticket.principal !== 'anonymous'"
               ng-hide="viewOnly || note.config.personalizedMode !== 'true'"
               ng-click="toggleNotePersonalizedMode()"
-              tooltip-placement="bottom" tooltip="切换到合作模式 {{isOwner ? '' : '(owner can change)'}}"
+              tooltip-placement="bottom" uib-tooltip="切换到合作模式 {{isOwner ? '' : '(owner can change)'}}"
               ng-disabled="revisionView">
         <i class="fa fa-user"></i>
       </button>
@@ -88,7 +88,7 @@ limitations under the License.
               ng-if="ticket.principal && ticket.principal !== 'anonymous'"
               ng-hide="viewOnly || note.config.personalizedMode === 'true'"
               ng-click="toggleNotePersonalizedMode()"
-              tooltip-placement="bottom" tooltip="切换到单人模式 {{isOwner ? '' : '(owner can change)'}}"
+              tooltip-placement="bottom" uib-tooltip="切换到单人模式 {{isOwner ? '' : '(owner can change)'}}"
               ng-disabled="revisionView">
         <i class="fa fa-users"></i>
       </button>
@@ -101,7 +101,7 @@ limitations under the License.
                 id="versionControlDropdown"
                 ng-hide="viewOnly"
                 data-toggle="dropdown"
-                tooltip-placement="bottom" tooltip="版本控制"
+                tooltip-placement="bottom" uib-tooltip="版本控制"
                 ng-disabled="revisionView">
           <i class="fa fa-file-code-o"></i>
         </button>
@@ -111,7 +111,7 @@ limitations under the License.
                 ng-hide="viewOnly"
                 ng-click="setNoteRevision()"
                 ng-disabled="!revisionView"
-                tooltip-placement="bottom" tooltip="设定修订版本">
+                tooltip-placement="bottom" uib-tooltip="设定修订版本">
           <i class="fa fa-arrow-circle-o-right"></i>
         </button>
         <ul class="dropdown-menu" style="width:250px"
@@ -130,7 +130,9 @@ limitations under the License.
                         ng-hide="viewOnly"
                         ng-click="checkpointNote(note.checkpoint.message)"
                         style="margin-left: 4px;"
-                        tooltip-placement="bottom" tooltip="提交该笔记">提交
+                        tooltip-append-to-body="true"
+                        tooltip-class="revisionTooltip"
+                        tooltip-placement="bottom" uib-tooltip="提交该笔记">提交
                 </button>
               </div>
             </div>
@@ -169,7 +171,7 @@ limitations under the License.
                 class="btn btn-default btn-xs"
                 ng-click="removeNote(note.id)"
                 ng-hide="viewOnly"
-                tooltip-placement="bottom" tooltip="永久移除该笔记"
+                tooltip-placement="bottom" uib-tooltip="永久移除该笔记"
                 ng-disabled="revisionView">
           <i class="icon-trash"></i>
         </button>
@@ -179,7 +181,7 @@ limitations under the License.
                 class="btn btn-default btn-xs"
                 ng-click="moveNoteToTrash(note.id)"
                 ng-hide="viewOnly"
-                tooltip-placement="bottom" tooltip="将该笔记移入回收站"
+                tooltip-placement="bottom" uib-tooltip="将该笔记移入回收站"
                 ng-disabled="revisionView">
           <i class="icon-trash"></i>
         </button>
@@ -191,7 +193,7 @@ limitations under the License.
              type="button"
              data-toggle="dropdown"
              ng-class="{ 'btn-info' : note.config.cron, 'btn-danger' : note.info.cron, 'btn-default' : !note.config.cron}"
-             tooltip-placement="bottom" tooltip="Run scheduler"
+             tooltip-placement="bottom" uib-tooltip="Run scheduler"
              ng-disabled="revisionView">
           <span class="fa fa-clock-o"></span> {{getCronOptionNameFromValue(note.config.cron)}}
         </div>
@@ -199,7 +201,7 @@ limitations under the License.
           <li>
             <div class="cron-preset-container">
               使用cron调度器运行笔记.
-              需要选择预设或写入自己的 <a href="http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger" target="_blank">cron 解析</a>.
+              需要选择预设或写入自己的 <a href="http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger" target="_blank">cron expression</a>.
               <div>
                 <span>- 预设</span>
                 <a class="cron-preset" ng-repeat="cr in cronOption"
@@ -244,19 +246,19 @@ limitations under the License.
               type="button"
               data-toggle="modal"
               data-target="#shortcutModal"
-              tooltip-placement="bottom" tooltip="快捷方式列表">
+              tooltip-placement="bottom" uib-tooltip="快捷方式列表">
           <i class="fa fa-keyboard-o"></i>
         </span>
         <span class="setting-btn"
               type="button"
               ng-click="toggleSetting()"
-              tooltip-placement="bottom" tooltip="绑定解释器">
+              tooltip-placement="bottom" uib-tooltip="绑定解释器">
           <i class="fa fa-cog" ng-style="{color: showSetting ? '#3071A9' : 'black' }"></i>
         </span>
         <span class="setting-btn"
               type="button"
               ng-click="togglePermissions()"
-              tooltip-placement="bottom" tooltip="笔记权限">
+              tooltip-placement="bottom" uib-tooltip="笔记权限">
           <i class="fa fa-lock" ng-style="{color: showPermissions ? '#3071A9' : 'black' }"></i>
         </span>
       </span>

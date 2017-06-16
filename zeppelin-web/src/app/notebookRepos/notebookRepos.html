@@ -16,13 +16,13 @@ limitations under the License.
     <div class="row">
       <div class="col-md-12">
         <h3 class="new_h3">
-          笔记本仓库
+          Notebook Repos
         </h3>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        管理笔记本仓库设置.
+        Manage your Notebook Repositories' settings.
       </div>
     </div>
   </div>
@@ -38,18 +38,18 @@ limitations under the License.
         <span style="float:right" ng-show="repo.settings.length > 0">
           <button class="btn btn-default btn-xs"
                   ng-click="valueform.$show();">
-            <span class="fa fa-pencil"></span> 编辑</button>
+            <span class="fa fa-pencil"></span> edit</button>
         </span>
       </div>
     </div>
     <div class="row interpreter">
       <div class="col-md-12" ng-show="repo.settings.length > 0">
-        <h5>设置项</h5>
+        <h5>Settings</h5>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th style="width:40%">名称</th>
-              <th style="width:60%">值</th>
+              <th style="width:40%">name</th>
+              <th style="width:60%">value</th>
             </tr>
           </thead>
           <tr ng-repeat="setting in repo.settings" >
@@ -80,18 +80,18 @@ limitations under the License.
             onbeforesave="noterepo.saveNotebookRepo(valueform, repo, $data)"
             ng-show="valueform.$visible">
         <button type="submit" class="btn btn-primary btn-xs">
-          <span class="fa fa-check"></span> 保存
+          <span class="fa fa-check"></span> Save
         </button>
         <button type="button" class="btn btn-default btn-xs"
                 ng-disabled="valueform.$waiting"
                 ng-click="valueform.$cancel();">
-          <span class="fa fa-remove"></span> 退出
+          <span class="fa fa-remove"></span> Cancel
         </button>
       </form>
     </span>
     <div class="row interpreter">
       <div ng-show="repo.settings.length === 0 || valueform.$hidden" class="col-md-12 gray40-message">
-        <em>当前笔记本仓库中不存在设置</em>
+        <em>Currently there are no settings for this Notebook Repository</em>
       </div>
     </div>
   </div>

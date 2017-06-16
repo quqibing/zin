@@ -67,7 +67,7 @@ limitations under the License.
                 </li>
               </ul>
             </span>
-              于
+              in
               <span class="btn-group">
               <button type="button" class="btn btn-default btn-xs dropdown-toggle"
                       data-toggle="dropdown"
@@ -84,7 +84,7 @@ limitations under the License.
                 <li
                   ng-if="getInterpreterRunningOption(setting.id) === 'Globally'">
                   <a style="cursor:pointer"
-                     tooltip="单个解释器实例在笔记间共享"
+                     uib-tooltip="单个解释器实例在笔记间共享"
                      ng-click="setPerNoteOption(setting.id, 'shared')">
                     笔记间共享
                   </a>
@@ -93,24 +93,24 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per Note'"
-                     tooltip="为每个笔记创建不同的解释器实例"
+                     uib-tooltip="为每个笔记创建不同的解释器实例"
                      ng-click="setPerNoteOption(setting.id, 'scoped')">
-                    scoped per note
+                    按笔记查看
                   </a>
                 </li>
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per User'"
-                     tooltip="为每个笔记创建单独的解释器实例"
+                     uib-tooltip="为每个笔记创建单独的解释器实例"
                      ng-click="setPerUserOption(setting.id, 'scoped')">
-                    scoped per user
+                    按用户查看
                   </a>
                 </li>
 
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per Note'"
-                     tooltip="为每个笔记创建单独的解释器进程"
+                     uib-tooltip="为每个笔记创建单独的解释器进程"
                      ng-click="setPerNoteOption(setting.id, 'isolated')">
                     笔记间隔离
                   </a>
@@ -118,7 +118,7 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-if="getInterpreterRunningOption(setting.id) === 'Per User'"
-                     tooltip="为每个笔记创建单独的解释器进程"
+                     uib-tooltip="Separate Interpreter process for each note"
                      ng-click="setPerUserOption(setting.id, 'isolated')">
                     用户间隔离
                   </a>
@@ -171,14 +171,14 @@ limitations under the License.
                   <ul class="dropdown-menu" role="menu">
                     <li>
                       <a style="cursor:pointer"
-                         tooltip="为每个笔记创建单独的解释器实例"
+                         uib-tooltip="为每个笔记创建单独的解释器实例"
                          ng-click="setPerNoteOption(setting.id, 'scoped')">
                         笔记间查看
                       </a>
                     </li>
                     <li>
                       <a style="cursor:pointer"
-                         tooltip="为每个笔记创建单独的解释器进程"
+                         uib-tooltip="为每个笔记创建单独的解释器进程"
                          ng-click="setPerNoteOption(setting.id, 'isolated')">
                         笔记间隔离
                       </a>
@@ -253,10 +253,10 @@ limitations under the License.
               <div>
                 <p>
                   在表单中输入用逗号分隔的用户名. <br />
-                  Empty field (*) implies anyone can run this interpreter.
+                  不输入意味着任何人可以运行这个解释器.
                 </p>
                 <div>
-                  <span class="owners">Owners </span>
+                  <span class="owners">所有者 </span>
                   <select id="newInterpreterUsers" class="form-control" multiple="multiple">
                     <option ng-repeat="user in newInterpreterSetting.option.users" selected="selected">{{user}}</option>
                   </select>

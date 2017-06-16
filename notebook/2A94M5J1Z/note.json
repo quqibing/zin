@@ -1,7 +1,7 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n## 欢迎使用 Workbench.\n##### This is a live tutorial, you can run the code yourself. (Shift-Enter to Run)",
+      "text": "%md\n## Welcome to Zeppelin.\n##### This is a live tutorial, you can run the code yourself. (Shift-Enter to Run)",
       "user": "anonymous",
       "dateUpdated": "Dec 17, 2016 3:32:15 PM",
       "config": {
@@ -364,7 +364,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Workbench 教程/基础功能 (Spark)",
+  "name": "Zeppelin Tutorial/Basic Features (Spark)",
   "id": "2A94M5J1Z",
   "angularObjects": {
     "2C73DY9P9:shared_process": []

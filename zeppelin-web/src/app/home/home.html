@@ -18,10 +18,10 @@ limitations under the License.
     </div>
     <div style="margin-top: -380px;">
       <h1 class="box-heading" id="welcome">
-        欢迎使用 Workbench!
+        欢迎使用Workbench!
       </h1>
-      Workbench 是基于web的交互式数据分析的笔记本.<br/>
-      你可以基于 Workbench 创建漂亮的数据驱动的，交互式的SQL协作及文档，等等<br/>
+      Workbench是基于 web 的交互式数据分析笔记本系统.<br/>
+      你可以基于Workbench创建漂亮的数据驱动, 交互式的SQL 协同的文档, 等等!<br/>
 
       <div class="row">
         <div class="col-md-4" ng-if="ticket">
@@ -29,7 +29,7 @@ limitations under the License.
             <i ng-class="isReloadingNotes ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'"
               ng-style="!isReloadingNotes && {'cursor': 'pointer'}" style="font-size: 13px;"
               ng-click="reloadNoteList();"
-              tooltip-placement="bottom" tooltip="从存储中重新加载笔记">
+              tooltip-placement="bottom" uib-tooltip="从存储中重新加载笔记">
             </i>
           </h4>
 
@@ -37,7 +37,7 @@ limitations under the License.
             <h5><a href="" data-toggle="modal" data-target="#noteImportModal" style="text-decoration: none;">
               <i style="font-size: 15px;" class="fa fa-upload"></i> 导入笔记</a></h5>
             <h5 ng-controller="NotenameCtrl as notenamectrl"><a href="" data-toggle="modal" data-target="#noteNameModal" style="text-decoration: none;" ng-click="notenamectrl.getInterpreterSettings()">
-              <i style="font-size: 15px;" class="icon-notebook"></i> 创建新笔记本</a></h5>
+              <i style="font-size: 15px;" class="icon-notebook"></i> 创建新笔记</a></h5>
             <ul id="notebook-names">
               <li class="filter-names" ng-include="'components/filterNoteNames/filter-note-names.html'"></li>
               <li ng-repeat="note in home.notes.list | filter:query.q | orderBy:home.arrayOrderingSrv.noteListOrdering track by $index">

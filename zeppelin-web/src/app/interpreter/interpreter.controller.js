@@ -381,7 +381,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: '删除该解释器设置吗？',
+      message: 'Do you want to delete this interpreter setting?',
       callback: function(result) {
         if (result) {
           $http.delete(baseUrlSrv.getRestApiBase() + '/interpreter/setting/' + settingId)
@@ -417,7 +417,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: '要重启该解释器吗？',
+      message: '要重启该解释器吗?',
       callback: function(result) {
         if (result) {
           $http.put(baseUrlSrv.getRestApiBase() + '/interpreter/setting/restart/' + settingId)

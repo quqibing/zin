@@ -141,11 +141,6 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
 
   initNotebook();
 
-  // force notebook reload on user change
-  $scope.$on('setNoteMenu', function(event, note) {
-    initNotebook();
-  });
-
   $scope.focusParagraphOnClick = function(clickEvent) {
     if (!$scope.note) {
       return;
@@ -724,13 +719,13 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     $scope.permissions.writers = angular.element('#selectWriters').val();
   }
 
-  $scope.restartInterpreter = function(interpeter) {
+  $scope.restartInterpreter = function(interpreter) {
     var thisConfirm = BootstrapDialog.confirm({
       closable: false,
       closeByBackdrop: false,
       closeByKeyboard: false,
       title: '',
-      message: 'Do you want to restart ' + interpeter.name + ' interpreter?',
+      message: '你想重启 ' + interpreter.name + ' 解释器吗?',
       callback: function(result) {
         if (result) {
           var payload  = {
@@ -739,18 +734,18 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
 
           thisConfirm.$modalFooter.find('button').addClass('disabled');
           thisConfirm.$modalFooter.find('button:contains("OK")')
-            .html('<i class="fa fa-circle-o-notch fa-spin"></i> Saving Setting');
+            .html('<i class="fa fa-circle-o-notch fa-spin"></i> 保存设置');
 
-          $http.put(baseUrlSrv.getRestApiBase() + '/interpreter/setting/restart/' + interpeter.id, payload)
+          $http.put(baseUrlSrv.getRestApiBase() + '/interpreter/setting/restart/' + interpreter.id, payload)
             .success(function(data, status, headers, config) {
-              var index = _.findIndex($scope.interpreterSettings, {'id': interpeter.id});
+              var index = _.findIndex($scope.interpreterSettings, {'id': interpreter.id});
               $scope.interpreterSettings[index] = data.body;
               thisConfirm.close();
             }).error(function(data, status, headers, config) {
             thisConfirm.close();
             console.log('Error %o %o', status, data.message);
             BootstrapDialog.show({
-              title: 'Error restart interpreter.',
+              title: '解释器重启错误.',
               message: data.message
             });
           });
@@ -769,9 +764,9 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
         console.log('Note permissions %o saved', $scope.permissions);
         BootstrapDialog.alert({
           closable: true,
-          title: 'Permissions Saved Successfully!!!',
-          message: 'Owners : ' + $scope.permissions.owners + '\n\n' + 'Readers : ' +
-          $scope.permissions.readers + '\n\n' + 'Writers  : ' + $scope.permissions.writers
+          title: '权限保存成功!!!',
+          message: '所有者 : ' + $scope.permissions.owners + '\n\n' + '可读 : ' +
+          $scope.permissions.readers + '\n\n' + '可写  : ' + $scope.permissions.writers
         });
         $scope.showPermissions = false;
       });
@@ -782,7 +777,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
         closable: false,
         closeByBackdrop: false,
         closeByKeyboard: false,
-        title: 'Insufficient privileges',
+        title: '权限不够',
         message: data.message,
         buttons: [
           {
@@ -839,10 +834,10 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     if ($scope.isOwner) {
       BootstrapDialog.confirm({
         closable: true,
-        title: 'Setting the result display',
+        title: '设置结果回显',
         message: function(dialog) {
-          var modeText = $scope.note.config.personalizedMode === 'true' ? 'collaborate' : 'personalize';
-          return 'Do you want to <span class="text-info">' + modeText + '</span> your analysis?';
+          var modeText = $scope.note.config.personalizedMode === 'true' ? '协作' : '个人化';
+          return '你想 <span class="text-info">' + modeText + '</span> 你的分析吗?';
         },
         callback: function(result) {
           if (result) {
