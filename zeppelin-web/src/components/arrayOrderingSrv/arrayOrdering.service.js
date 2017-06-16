@@ -28,7 +28,7 @@ function arrayOrderingSrv(TRASH_FOLDER_ID) {
 
   this.getNoteName = function(note) {
     if (note.name === undefined || note.name.trim() === '') {
-      return 'Note ' + note.id;
+      return '笔记 ' + note.id;
     } else {
       return note.name;
     }

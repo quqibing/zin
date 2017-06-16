@@ -67,7 +67,7 @@ function NotenameCtrl($scope, noteListDataFactory, $routeParams, websocketMsgSrv
         }
       }
     });
-    return 'Untitled Note ' + newCount;
+    return '无标题的笔记 ' + newCount;
   };
 
   vm.cloneNoteName = function() {

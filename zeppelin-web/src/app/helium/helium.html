@@ -58,12 +58,12 @@ limitations under the License.
        style="padding-bottom: 15px"
        ng-if="getPackageSize(defaultVersions) === 0">
     <div class="col-md-12 gray40-message">
-      <em>No package installed</em>
+      <em>没有安装 包</em>
       <a target="_blank"
          class="helium-repo-btn"
          ng-href="https://zeppelin.apache.org/docs/{{zeppelinVersion}}/development/writingzeppelinvisualization.html#how-it-works"
          tooltip-placement="top"
-         tooltip="How to use?">
+         tooltip="如何使用?">
         <i class="icon-question" ng-style="{color: 'black'}"></i>
       </a>
     </div>
@@ -88,7 +88,7 @@ limitations under the License.
         {{pkgInfo.pkg.artifact}}
         <span ng-show="packageInfos[pkgName].length > 0"
               ng-click="toggleVersions(pkgName)">
-          versions
+          版本
         </span>
       </div>
       <ul class="heliumPackageVersions"
@@ -98,7 +98,7 @@ limitations under the License.
           {{pkg.pkg.artifact}} -
           <span ng-click="enable(pkgName, pkg.pkg.artifact)"
                 style="margin-left:3px;cursor:pointer;text-decoration: underline;color:#3071a9">
-            enable
+            启用
           </span>
         </li>
       </ul>

@@ -164,19 +164,19 @@ limitations under the License.
                 <li>
                   <a style="cursor:pointer"
                      ng-click="setInterpreterRunningOption(setting.id, 'shared', 'shared')">
-                    全局可用
+                    全局的
                   </a>
                 </li>
                 <li>
                   <a style="cursor:pointer"
                      ng-click="setInterpreterRunningOption(setting.id, 'scoped', '')">
-                    单笔记可用
+                    每笔记的
                   </a>
                 </li>
                 <li ng-if="ticket.principal !== 'anonymous'">
                   <a style="cursor:pointer"
                      ng-click="setInterpreterRunningOption(setting.id, 'shared', 'scoped')">
-                    单用户可用
+                    每用户的
                   </a>
                 </li>
               </ul>

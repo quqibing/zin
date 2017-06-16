@@ -381,7 +381,7 @@ function InterpreterCtrl($rootScope, $scope, $http, baseUrlSrv, ngToast, $timeou
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to delete this interpreter setting?',
+      message: '你确定要删除该解释器设置吗?',
       callback: function(result) {
         if (result) {
           $http.delete(baseUrlSrv.getRestApiBase() + '/interpreter/setting/' + settingId)

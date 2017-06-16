@@ -31,7 +31,7 @@ function RenameCtrl($scope) {
     self.validator = options.validator || defaultValidator;
     self.callback = options.callback || function() {};
 
-    $scope.title = options.title || 'Rename';
+    $scope.title = options.title || '重命名';
     $scope.params.newName = options.oldName || '';
     $scope.validate = function() {
       $scope.isValid = self.validator($scope.params.newName);

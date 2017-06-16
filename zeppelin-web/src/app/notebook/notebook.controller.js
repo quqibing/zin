@@ -93,7 +93,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
   $scope.blockAnonUsers = function() {
     var zeppelinVersion = $rootScope.zeppelinVersion;
     var url = 'https://zeppelin.apache.org/docs/' + zeppelinVersion + '/security/notebook_authorization.html';
-    var content = 'Only authenticated user can set the permission.' +
+    var content = '只有被验证的用户才能设置该权限.' +
       '<a data-toggle="tooltip" data-placement="top" title="Learn more" target="_blank" href=' + url + '>' +
       '<i class="icon-question" />' +
       '</a>';
@@ -101,10 +101,10 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
       closable: false,
       closeByBackdrop: false,
       closeByKeyboard: false,
-      title: 'No permission',
+      title: '没有权限',
       message: content,
       buttons: [{
-        label: 'Close',
+        label: '关闭',
         action: function(dialog) {
           dialog.close();
         }
@@ -196,7 +196,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to clone this note?',
+      message: '你想复制该笔记吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.cloneNote(noteId);
@@ -211,7 +211,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Commit note to current repository?',
+      message: '将笔记提交到当前仓库吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.checkpointNote($routeParams.noteId, commitMessage);
@@ -226,7 +226,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Set notebook head to current revision?',
+      message: '设置笔记本head为当前修订版本吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.setNoteRevision($routeParams.noteId, $routeParams.revisionId);
@@ -275,7 +275,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
         $location.path('/notebook/' + $routeParams.noteId + '/revision/' + revision.id);
       }
     } else {
-      ngToast.danger({content: 'There is a problem with this Revision',
+      ngToast.danger({content: '该修订版本存在问题',
         verticalPosition: 'top', dismissOnTimeout: false});
     }
   };
@@ -284,7 +284,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Run all paragraphs?',
+      message: '运行全部段落吗?',
       callback: function(result) {
         if (result) {
           const paragraphs = $scope.note.paragraphs.map(p => {
@@ -571,7 +571,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
       BootstrapDialog.confirm({
         closable: true,
         title: '',
-        message: 'Interpreter setting changes will be discarded.',
+        message: '解释器设置变更将会被丢弃.',
         callback: function(result) {
           if (result) {
             $scope.$apply(function() {
@@ -699,7 +699,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
       BootstrapDialog.confirm({
         closable: true,
         title: '',
-        message: 'Changes will be discarded.',
+        message: '变更将会被丢弃.',
         callback: function(result) {
           if (result) {
             $scope.$apply(function() {
@@ -790,7 +790,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
             }
           },
           {
-            label: 'Cancel',
+            label: '取消',
             action: function(dialog) {
               dialog.close();
               $location.path('/');

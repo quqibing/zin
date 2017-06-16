@@ -20,7 +20,7 @@ limitations under the License.
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add New Repository</h4>
+        <h4 class="modal-title">增加新的仓库</h4>
       </div>
 
       <form class="form-horizontal" ng-submit="addNewRepository()">
@@ -29,19 +29,19 @@ limitations under the License.
               <label class="control-label col-sm-2" for="repoId">ID</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="repoId" ng-model="newRepoSetting.id"
-                       placeholder="Repository id" required />
+                       placeholder="仓库 id" required />
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-2" for="repoUrl">URL</label>
               <div class="col-sm-10">
-                <input type="text" pattern="(http|https|file)://.*" title="Please enter URL starts with http://, https:// or file://"
+                <input type="text" pattern="(http|https|file)://.*" title="输入的URL应当以 http://, https:// 或 file:// 开头"
                        class="form-control" id="repoUrl" ng-model="newRepoSetting.url"
-                       placeholder="Repository url" required />
+                       placeholder="仓库 url" required />
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="repoSnapshot">Snapshot</label>
+              <label class="control-label col-sm-2" for="repoSnapshot">快照</label>
               <div class="col-sm-10">
                 <select class="form-control"
                         id="repoSnapshot"
@@ -51,23 +51,23 @@ limitations under the License.
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="repoUsername">Username</label>
+              <label class="control-label col-sm-2" for="repoUsername">用户名</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="repoUsername" ng-model="newRepoSetting.username" />
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="repoPassword">Password</label>
+              <label class="control-label col-sm-2" for="repoPassword">密&nbsp;&nbsp;码</label>
               <div class="col-sm-10">
                 <input type="password" class="form-control" id="repoPassword" ng-model="newRepoSetting.password" />
               </div>
             </div>
             <hr/>
-            <div class="center-block"><h4>Proxy Settings (optional)</h4></div>
+            <div class="center-block"><h4>代理设置 (可选)</h4></div>
             <br/>
             <div class="form-group">
               <div class="col-sm-10">
-                <label class="control-label col-sm-2" for="proxyProtocol1">Protocol</label>
+                <label class="control-label col-sm-2" for="proxyProtocol1">协议</label>
                 <label class="radio-inline">
                     <input type="radio" name="proxyProtocol" id="proxyProtocol1" value="HTTP" ng-model="newRepoSetting.proxyProtocol"/> HTTP
                 </label>
@@ -77,25 +77,25 @@ limitations under the License.
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="proxyHost">Host</label>
+              <label class="control-label col-sm-2" for="proxyHost">主机</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="proxyHost" ng-model="newRepoSetting.proxyHost" />
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="proxyPort">Port</label>
+              <label class="control-label col-sm-2" for="proxyPort">端口</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="proxyPort" ng-model="newRepoSetting.proxyPort" />
               </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="proxyLogin">Login</label>
+                <label class="control-label col-sm-2" for="proxyLogin">用户名</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="proxyLogin" ng-model="newRepoSetting.proxyLogin" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="proxyPassword">Password</label>
+                <label class="control-label col-sm-2" for="proxyPassword">密码</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="proxyPassword" ng-model="newRepoSetting.proxyPassword" />
                 </div>
@@ -103,10 +103,10 @@ limitations under the License.
         </div>
         <div class="modal-footer">
           <button type="submit"
-                  class="btn btn-default">Add
+                  class="btn btn-default">增加
           </button>
           <button type="button" data-dismiss="modal"
-                  class="btn btn-default" ng-click="resetNewRepositorySetting()">Cancel
+                  class="btn btn-default" ng-click="resetNewRepositorySetting()">取消
           </button>
         </div>
       </form>

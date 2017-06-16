@@ -78,7 +78,7 @@ limitations under the License.
               ng-if="ticket.principal && ticket.principal !== 'anonymous'"
               ng-hide="viewOnly || note.config.personalizedMode !== 'true'"
               ng-click="toggleNotePersonalizedMode()"
-              tooltip-placement="bottom" uib-tooltip="切换到合作模式 {{isOwner ? '' : '(owner can change)'}}"
+              tooltip-placement="bottom" uib-tooltip="切换到合作模式 {{isOwner ? '' : '(所有者可以修改)'}}"
               ng-disabled="revisionView">
         <i class="fa fa-user"></i>
       </button>
@@ -88,7 +88,7 @@ limitations under the License.
               ng-if="ticket.principal && ticket.principal !== 'anonymous'"
               ng-hide="viewOnly || note.config.personalizedMode === 'true'"
               ng-click="toggleNotePersonalizedMode()"
-              tooltip-placement="bottom" uib-tooltip="切换到单人模式 {{isOwner ? '' : '(owner can change)'}}"
+              tooltip-placement="bottom" uib-tooltip="切换到单人模式 {{isOwner ? '' : '(所有者可以修改)'}}"
               ng-disabled="revisionView">
         <i class="fa fa-users"></i>
       </button>

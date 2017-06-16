@@ -110,7 +110,7 @@ function NavCtrl($scope, $rootScope, $http, $routeParams, $location,
         $rootScope.ticket.ticket = '';
         $rootScope.ticket.roles = '';
         BootstrapDialog.show({
-          message: 'Logout Success'
+          message: '登出成功'
         });
         setTimeout(function() {
           window.location.replace('/');

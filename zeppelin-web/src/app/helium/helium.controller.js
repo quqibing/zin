@@ -198,7 +198,7 @@
                 confirm.close();
                 console.log('Failed to disable package %o. %o', name, data);
                 BootstrapDialog.show({
-                  title: 'Error on disabling ' + name,
+                  title: '当禁用 ' + name + ' 时出错',
                   message: data.message
                 });
               });

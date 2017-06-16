@@ -71,14 +71,14 @@ function websocketEvents($rootScope, $websocket, $location, baseUrlSrv) {
       var btn = [];
       if ($rootScope.ticket.roles === '[]') {
         btn = [{
-          label: 'Close',
+          label: '关闭',
           action: function(dialog) {
             dialog.close();
           }
         }];
       } else {
         btn = [{
-          label: 'Login',
+          label: '登入',
           action: function(dialog) {
             dialog.close();
             angular.element('#loginModal').modal({
@@ -86,7 +86,7 @@ function websocketEvents($rootScope, $websocket, $location, baseUrlSrv) {
             });
           }
         }, {
-          label: 'Cancel',
+          label: '取消',
           action: function(dialog) {
             dialog.close();
             // using $rootScope.apply to trigger angular digest cycle
@@ -102,7 +102,7 @@ function websocketEvents($rootScope, $websocket, $location, baseUrlSrv) {
         closable: false,
         closeByBackdrop: false,
         closeByKeyboard: false,
-        title: 'Insufficient privileges',
+        title: '权限不够',
         message: data.info.toString(),
         buttons: btn
       });
@@ -142,11 +142,11 @@ function websocketEvents($rootScope, $websocket, $location, baseUrlSrv) {
         closable: false,
         closeByBackdrop: false,
         closeByKeyboard: false,
-        title: 'Details',
+        title: '详情',
         message: data.info.toString(),
         buttons: [{
           // close all the dialogs when there are error on running all paragraphs
-          label: 'Close',
+          label: '关闭',
           action: function() {
             BootstrapDialog.closeAll();
           }
