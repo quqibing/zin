@@ -193,7 +193,7 @@ limitations under the License.
              type="button"
              data-toggle="dropdown"
              ng-class="{ 'btn-info' : note.config.cron, 'btn-danger' : note.info.cron, 'btn-default' : !note.config.cron}"
-             tooltip-placement="bottom" uib-tooltip="Run scheduler"
+             tooltip-placement="bottom" uib-tooltip="计划运行"
              ng-disabled="revisionView">
           <span class="fa fa-clock-o"></span> {{getCronOptionNameFromValue(note.config.cron)}}
         </div>

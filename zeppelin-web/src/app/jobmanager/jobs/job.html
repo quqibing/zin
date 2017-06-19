@@ -51,7 +51,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i style="color: green" class="fa fa-circle-o"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is READY">
+           uib-tooltip="{{paragraphJob.name}} 就绪">
         </i>
       </a>
       <a ng-switch-when="FINISHED"
@@ -59,7 +59,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i style="color: green" class="fa fa-circle"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is FINISHED">
+           uib-tooltip="{{paragraphJob.name}} is 已结束">
         </i>
       </a>
       <a ng-switch-when="ABORT"
@@ -67,7 +67,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i style="color: orange" class="fa fa-circle"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is ABORT">
+           uib-tooltip="{{paragraphJob.name}} 中断">
         </i>
       </a>
       <a ng-switch-when="ERROR"
@@ -75,7 +75,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i style="color: red" class="fa fa-circle"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is ERROR">
+           uib-tooltip="{{paragraphJob.name}} 错误">
         </i>
       </a>
       <a ng-switch-when="PENDING"
@@ -83,7 +83,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i style="color: gray" class="fa fa-circle"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is PENDING">
+           uib-tooltip="{{paragraphJob.name}} 等待">
         </i>
       </a>
       <a ng-switch-when="RUNNING"
@@ -91,7 +91,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i style="color: blue" class="fa fa-spinner spinAnimation"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is RUNNING">
+           uib-tooltip="{{paragraphJob.name}} 正运行">
         </i>
       </a>
       <a ng-switch-default class="icon-question"
@@ -99,7 +99,7 @@ limitations under the License.
          ng-href="#/notebook/{{notebookJob.noteId}}?paragraph={{paragraphJob.id}}">
         <i class="icon-question"
            tooltip-placement="top-left"
-           uib-tooltip="{{paragraphJob.name}} is {{paragraphJob.status}}">
+           uib-tooltip="{{paragraphJob.name}} 是 {{paragraphJob.status}}">
         </i>
       </a>
     </span>

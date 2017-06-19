@@ -78,19 +78,19 @@ limitations under the License.
       </p>
       <div class="permissionsForm"
            data-ng-model="permissions">
-        <p><span class="owners">Owners </span>
+        <p><span class="owners">所有者 </span>
           <select id="selectOwners" multiple="multiple">
             <option ng-repeat="owner in permissions.owners" selected="selected">{{owner}}</option>
           </select>
           所有者可以变更权限, 读写该笔记.
         </p>
-        <p><span class="writers">Writers </span>
+        <p><span class="writers">编写者 </span>
           <select id="selectWriters" multiple="multiple">
             <option ng-repeat="writers in permissions.writers" selected="selected">{{writers}}</option>
           </select>
             编写者可以读写该笔记.
         </p>
-        <p><span class="readers">Readers </span>
+        <p><span class="readers">阅读者 </span>
           <select id="selectReaders" multiple="multiple">
             <option ng-repeat="readers in permissions.readers" selected="selected">{{readers}}</option>
           </select>

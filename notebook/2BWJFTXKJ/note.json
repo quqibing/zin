@@ -101,7 +101,7 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n## Zeppelin SparkR Tutorial\n\n##### This is a live tutorial, you can run the code yourself. (Shift-Enter to Run)",
+      "text": "%md\n\n## Workbench SparkR Tutorial\n\n##### This is a live tutorial, you can run the code yourself. (Shift-Enter to Run)",
       "user": "anonymous",
       "dateUpdated": "Jan 29, 2017 3:17:08 AM",
       "config": {
@@ -125,7 +125,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eZeppelin SparkR Tutorial\u003c/h2\u003e\n\u003ch5\u003eThis is a live tutorial, you can run the code yourself. (Shift-Enter to Run)\u003c/h5\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eWorkbench SparkR Tutorial\u003c/h2\u003e\n\u003ch5\u003eThis is a live tutorial, you can run the code yourself. (Shift-Enter to Run)\u003c/h5\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -1279,7 +1279,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Zeppelin Tutorial/R (SparkR)",
+  "name": "Workbench Tutorial/R (SparkR)",
   "id": "2BWJFTXKJ",
   "angularObjects": {
     "2C9A5UJ3F:shared_process": [],

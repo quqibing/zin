@@ -801,8 +801,8 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
       return '';
     }
     var user = (pdata.user === undefined || pdata.user === null) ? 'anonymous' : pdata.user;
-    var desc = 'Took ' + moment.duration((timeMs / 1000), 'seconds').format('h [hrs] m [min] s [sec]') +
-      '. Last updated by ' + user + ' at ' + moment(pdata.dateFinished).format('MMMM DD YYYY, h:mm:ss A') + '.';
+    var desc = '花费 ' + moment.duration((timeMs / 1000), '秒').format('h [hrs] m [min] s [sec]') +
+      '. 最后更新 ' + user + ' 于 ' + moment(pdata.dateFinished).format('MMMM DD YYYY, h:mm:ss A') + '.';
     if ($scope.isResultOutdated(pdata)) {
       desc += ' (outdated)';
     }
@@ -810,7 +810,7 @@ function ParagraphCtrl($scope, $rootScope, $route, $window, $routeParams, $locat
   };
 
   $scope.getElapsedTime = function(paragraph) {
-    return 'Started ' + moment(paragraph.dateStarted).fromNow() + '.';
+    return '已启动 ' + moment(paragraph.dateStarted).fromNow() + '.';
   };
 
   $scope.isResultOutdated = function(pdata) {
