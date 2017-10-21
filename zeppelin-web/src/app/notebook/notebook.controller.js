@@ -93,7 +93,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
   $scope.blockAnonUsers = function() {
     var zeppelinVersion = $rootScope.zeppelinVersion;
     var url = 'https://zeppelin.apache.org/docs/' + zeppelinVersion + '/security/notebook_authorization.html';
-    var content = 'Only authenticated user can set the permission.' +
+    //var content = 'Only authenticated user can set the permission.' +
+    var content = '只有授权用户可以设置权限.' +
       '<a data-toggle="tooltip" data-placement="top" title="Learn more" target="_blank" href=' + url + '>' +
       '<i class="icon-question" />' +
       '</a>';
@@ -201,7 +202,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Do you want to clone this note?',
+      //message: 'Do you want to clone this note?',
+      message: '复制该笔记吗?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.cloneNote(noteId);
@@ -216,7 +218,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Commit note to current repository?',
+      //message: 'Commit note to current repository?',
+      message: '将当前笔记提交到代码仓库?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.checkpointNote($routeParams.noteId, commitMessage);
@@ -231,7 +234,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Set notebook head to current revision?',
+      //message: 'Set notebook head to current revision?',
+      message: '设置笔记本指向当前修订版?',
       callback: function(result) {
         if (result) {
           websocketMsgSrv.setNoteRevision($routeParams.noteId, $routeParams.revisionId);
@@ -280,7 +284,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
         $location.path('/notebook/' + $routeParams.noteId + '/revision/' + revision.id);
       }
     } else {
-      ngToast.danger({content: 'There is a problem with this Revision',
+      //ngToast.danger({content: 'There is a problem with this Revision',
+      ngToast.danger({content: '当前修订版存在问题',
         verticalPosition: 'top', dismissOnTimeout: false});
     }
   };
@@ -289,7 +294,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     BootstrapDialog.confirm({
       closable: true,
       title: '',
-      message: 'Run all paragraphs?',
+      //message: 'Run all paragraphs?',
+      message: '运行所有段落?',
       callback: function(result) {
         if (result) {
           const paragraphs = $scope.note.paragraphs.map(p => {
@@ -704,7 +710,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
       BootstrapDialog.confirm({
         closable: true,
         title: '',
-        message: 'Changes will be discarded.',
+        //message: 'Changes will be discarded.',
+        message: '变更将被丢弃.',
         callback: function(result) {
           if (result) {
             $scope.$apply(function() {
@@ -730,7 +737,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
       closeByBackdrop: false,
       closeByKeyboard: false,
       title: '',
-      message: 'Do you want to restart ' + interpeter.name + ' interpreter?',
+      //message: 'Do you want to restart ' + interpeter.name + ' interpreter?',
+      message: '确实要重启 ' + interpeter.name + ' 解释器?',
       callback: function(result) {
         if (result) {
           var payload  = {
@@ -750,7 +758,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
             thisConfirm.close();
             console.log('Error %o %o', status, data.message);
             BootstrapDialog.show({
-              title: 'Error restart interpreter.',
+              //title: 'Error restart interpreter.',
+              title: '重启解释器错误.',
               message: data.message
             });
           });
@@ -769,9 +778,11 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
         console.log('Note permissions %o saved', $scope.permissions);
         BootstrapDialog.alert({
           closable: true,
-          title: 'Permissions Saved Successfully!!!',
-          message: 'Owners : ' + $scope.permissions.owners + '\n\n' + 'Readers : ' +
-          $scope.permissions.readers + '\n\n' + 'Writers  : ' + $scope.permissions.writers
+          //title: 'Permissions Saved Successfully!!!',
+          title: '权限保存成功!!!',
+          //message: 'Owners : ' + $scope.permissions.owners + '\n\n' + 'Readers : ' +
+          message: '所有者 : ' + $scope.permissions.owners + '\n\n' + '读取者 : ' +
+          $scope.permissions.readers + '\n\n' + '编写者  : ' + $scope.permissions.writers
         });
         $scope.showPermissions = false;
       });
@@ -782,11 +793,13 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
         closable: false,
         closeByBackdrop: false,
         closeByKeyboard: false,
-        title: 'Insufficient privileges',
+        //title: 'Insufficient privileges',
+        title: '访问权限错误',
         message: data.message,
         buttons: [
           {
-            label: 'Login',
+            //label: 'Login',
+            label: '登入',
             action: function(dialog) {
               dialog.close();
               angular.element('#loginModal').modal({
@@ -795,7 +808,8 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
             }
           },
           {
-            label: 'Cancel',
+            //label: 'Cancel',
+            label: '取消',
             action: function(dialog) {
               dialog.close();
               $location.path('/');
@@ -839,10 +853,12 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     if ($scope.isOwner) {
       BootstrapDialog.confirm({
         closable: true,
-        title: 'Setting the result display',
+        //title: 'Setting the result display',
+        title: '设置结果显示',
         message: function(dialog) {
           var modeText = $scope.note.config.personalizedMode === 'true' ? 'collaborate' : 'personalize';
-          return 'Do you want to <span class="text-info">' + modeText + '</span> your analysis?';
+          //return 'Do you want to <span class="text-info">' + modeText + '</span> your analysis?';
+          return '你想 <span class="text-info">' + modeText + '</span> 你的分析吗?';
         },
         callback: function(result) {
           if (result) {
